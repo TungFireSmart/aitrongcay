@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bắt đầu review website vườn thuê số hóa</title>
+  <meta name="description" content="Entrypoint review cho prototype website vườn thuê số hóa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-row">
+    <a class="logo" href="start-here.html"><span class="logo-badge">🌿</span><span>Review prototype</span></a>
+    <nav class="nav-menu">
+      <a href="index.html">Website chính</a>
+      <a href="portal/dashboard.html">Portal demo</a>
+      <a href="packages.html">Gói vườn</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-secondary" href="index.html">Vào homepage</a>
+      <a class="btn btn-primary" href="portal/dashboard.html">Xem portal</a>
+    </div>
+    <button class="btn btn-secondary menu-toggle" data-mobile-toggle>Menu</button>
+  </div>
+  <div class="container" data-mobile-panel style="display:none"></div>
+</header>
+
+<main>
+  <section class="section-hero">
+    <div class="container split-card">
+      <div class="hero-card hero-shell">
+        <span class="eyebrow">Entrypoint cho người review</span>
+        <h1>Mở từ đây để biết nên xem gì trước, xem gì sau</h1>
+        <p class="lead">Trang này không dành cho khách hàng cuối. Nó là điểm vào giúp anh/chị review nhanh prototype như một website sắp đi vào triển khai thật: có homepage công khai, có hành trình đăng ký và có portal trải nghiệm sau đăng nhập.</p>
+        <div class="inline-list" style="margin-top:22px">
+          <a class="btn btn-primary" href="index.html">1. Xem website công khai</a>
+          <a class="btn btn-secondary" href="portal/dashboard.html">2. Xem portal khách hàng</a>
+          <a class="btn btn-secondary" href="signup/register.html">3. Xem flow đăng ký</a>
+        </div>
+        <div class="review-checklist" style="margin-top:24px">
+          <div class="review-step"><strong>Website công khai</strong><span>Xem cảm giác thương hiệu, storytelling, cách chốt giá trị và CTA.</span></div>
+          <div class="review-step"><strong>Portal demo</strong><span>Xem cảm giác “vườn của tôi”, webcam, nhật ký chăm sóc và AI summary.</span></div>
+          <div class="review-step"><strong>Flow đăng ký</strong><span>Xem hành trình khách đi từ quan tâm → để lại thông tin → onboarding.</span></div>
+        </div>
+      </div>
+      <div class="glass-card">
+        <div class="kicker">Checkpoint hiện tại</div>
+        <h2>Prototype đã tiến gần hơn tới cảm giác website chạy được</h2>
+        <div class="cards-3 review-mini-grid">
+          <div class="card"><div class="feature-icon">🏠</div><h3>Homepage rõ vai trò</h3><p>Nhìn như trang public thật, không còn giống file demo rời rạc.</p></div>
+          <div class="card"><div class="feature-icon">🧭</div><h3>Có luồng xem rõ</h3><p>Người không chuyên IT mở repo vẫn biết vào đâu trước.</p></div>
+          <div class="card"><div class="feature-icon">🖥️</div><h3>Có local server nhẹ</h3><p>Chạy bằng một lệnh để review như website thật trong trình duyệt.</p></div>
+        </div>
+        <div class="notice" style="margin-top:18px">Nếu muốn review đúng kiểu website: chạy local server rồi mở <strong>http://127.0.0.1:4173/start-here.html</strong>.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head center" style="margin-inline:auto">
+        <span class="eyebrow">Tour review gợi ý</span>
+        <h2>Đi theo đúng thứ tự này là cảm được toàn bộ sản phẩm rất nhanh</h2>
+      </div>
+      <div class="cards-4">
+        <a class="card review-link-card" href="index.html">
+          <div class="feature-icon">1</div>
+          <h3>Homepage</h3>
+          <p>Trang định vị mô hình, tạo cảm giác sở hữu và chốt lý do khách muốn tìm hiểu tiếp.</p>
+        </a>
+        <a class="card review-link-card" href="how-it-works.html">
+          <div class="feature-icon">2</div>
+          <h3>Cách hoạt động</h3>
+          <p>Giải thích dịch vụ theo ngôn ngữ đời thường, giảm cảm giác mô hình còn lạ.</p>
+        </a>
+        <a class="card review-link-card" href="packages.html">
+          <div class="feature-icon">3</div>
+          <h3>Gói vườn</h3>
+          <p>Xem cấu trúc gói để đánh giá mức dễ mua và mức sẵn sàng thương mại.</p>
+        </a>
+        <a class="card review-link-card" href="portal/dashboard.html">
+          <div class="feature-icon">4</div>
+          <h3>Portal demo</h3>
+          <p>Phần quan trọng nhất để thấy dự án đang tiến gần website thật hơn chứ không chỉ là landing page.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div class="glass-card">
+        <span class="eyebrow">Các trang chính nên mở</span>
+        <div class="page-map">
+          <a href="index.html"><strong>index.html</strong><span>Homepage public</span></a>
+          <a href="packages.html"><strong>packages.html</strong><span>Gói dịch vụ</span></a>
+          <a href="digital-experience.html"><strong>digital-experience.html</strong><span>Trải nghiệm số / camera / portal</span></a>
+          <a href="food-safety.html"><strong>food-safety.html</strong><span>Niềm tin chất lượng</span></a>
+          <a href="signup/register.html"><strong>signup/register.html</strong><span>Điểm bắt đầu để lại thông tin</span></a>
+          <a href="portal/dashboard.html"><strong>portal/dashboard.html</strong><span>Portal khách hàng sau khi kích hoạt</span></a>
+        </div>
+      </div>
+      <div class="glass-card">
+        <span class="eyebrow">Ghi chú review</span>
+        <h2>Review theo 3 câu hỏi này sẽ rất dễ chốt hướng tiếp</h2>
+        <ul class="check-list">
+          <li>Người xem có hiểu ngay đây là mô hình gì và vì sao đáng thử không?</li>
+          <li>Portal có tạo được cảm giác “đây là website/sản phẩm sắp chạy thật” chưa?</li>
+          <li>CTA và flow đăng ký đã đủ rõ để chuyển từ hứng thú sang hành động chưa?</li>
+        </ul>
+        <div class="inline-list" style="margin-top:20px">
+          <a class="btn btn-secondary" href="auth/login.html">Xem màn đăng nhập</a>
+          <a class="btn btn-secondary" href="signup/onboarding.html">Xem onboarding</a>
+          <a class="btn btn-primary" href="faq.html">Xem FAQ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="logo" style="margin-bottom:12px"><span class="logo-badge">🌿</span><span>Review prototype</span></div>
+      <p>Entrypoint hỗ trợ review nhanh cho dự án website vườn thuê số hóa.</p>
+    </div>
+    <div>
+      <h3>Bắt đầu</h3>
+      <p><a href="index.html">Homepage</a><br><a href="portal/dashboard.html">Portal demo</a></p>
+    </div>
+    <div>
+      <h3>Luồng</h3>
+      <p><a href="signup/register.html">Đăng ký</a><br><a href="auth/login.html">Đăng nhập</a></p>
+    </div>
+    <div>
+      <h3>Niềm tin</h3>
+      <p><a href="food-safety.html">An toàn thực phẩm</a><br><a href="faq.html">FAQ</a></p>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

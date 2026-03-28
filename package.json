@@ -1,0 +1,10 @@
+{
+  "name": "aitrongcay-prototype",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Static prototype cho dự án vườn thuê số hóa",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "serve": "node scripts/serve.mjs"
+  }
+}
