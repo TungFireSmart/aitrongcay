@@ -1,15 +1,25 @@
-# aitrongcay
+# aitrongcay — prototype website hoàn chỉnh
 
-Bản xem nhanh 3 mẫu homepage cho dự án vườn thuê số hóa.
+Prototype static cho dự án **"vườn thuê số hóa"**, bám Mẫu 1 **"Vườn Riêng Trong Tầm Tay"**.
 
-## Files
+## Mở nhanh
 
-- `previews/garden-homepage-preview.html` — file preview trực tiếp 3 mẫu homepage
-- `docs/garden-homepage-concepts-v1.md` — mô tả 3 concept homepage
-- `docs/garden-digital-lease-sitemap-wireframes.md` — sitemap + wireframe đã duyệt
+Entrypoint chính:
 
-## Cách xem nhanh
+- `index.html`
 
-Mở file sau trong trình duyệt:
+Chỉ cần mở file này bằng trình duyệt là có thể duyệt toàn bộ website như một khách hàng thật.
 
-- `previews/garden-homepage-preview.html`
+## Các khu chính
+
+- Public website: `index.html`
+- Đăng ký: `signup/register.html`
+- Onboarding: `signup/onboarding.html`
+- Login: `auth/login.html`
+- Portal demo: `portal/dashboard.html`
+
+## Ghi chú
+
+- Đây là prototype **HTML/CSS/JS tĩnh**, chưa nối backend thật.
+- Các form đều là luồng demo, đủ để owner duyệt UX/UI và cấu trúc trang.
+- Toàn bộ page đã được liên kết qua navigation để xem liền mạch.
