@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vườn Riêng Trong Tầm Tay — Full UI Spec Preview</title>
+  <title>Ai trồng cây — Full UI Spec Pkhám phá</title>
   <style>
     :root {
       --green:#1F6B45;
@@ -46,7 +46,7 @@
     .grid-4{grid-template-columns:repeat(4,1fr)}
     .mini{padding:18px;border-radius:20px;border:1px solid var(--line);background:#fff}
     .muted{color:var(--muted)}
-    .hero-preview{background:var(--cream);border-radius:30px;padding:26px;border:1px solid #e5e2d9}
+    .hero-pkhám phá{background:var(--cream);border-radius:30px;padding:26px;border:1px solid #e5e2d9}
     .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:center}
     .headline{font-size:clamp(32px,5vw,58px);line-height:1.04;letter-spacing:-.05em;margin:0 0 14px}
     .sub{font-size:18px;color:#506154;line-height:1.7;margin:0 0 18px}
@@ -63,7 +63,7 @@
     .floating{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
     .floating .mini{background:#fff;box-shadow:0 10px 20px rgba(0,0,0,.05)}
     .pricing.featured{border:2px solid var(--green-2);transform:translateY(-4px)}
-    .portal-preview{background:#fbfcfa;border:1px solid var(--line);border-radius:28px;overflow:hidden}
+    .portal-pkhám phá{background:#fbfcfa;border:1px solid var(--line);border-radius:28px;overflow:hidden}
     .portal-shell{display:grid;grid-template-columns:250px 1fr;min-height:560px}
     .portal-side{background:#f3f7f1;border-right:1px solid var(--line);padding:18px}
     .portal-main{padding:20px}
@@ -84,7 +84,7 @@
     @media (max-width: 1100px){
       .app{grid-template-columns:1fr}
       .sidebar{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line)}
-      .hero-grid,.grid-2,.grid-3,.grid-4,.hero-preview .hero-grid,.dashboard-grid,.portal-shell,.statusbar{grid-template-columns:1fr}
+      .hero-grid,.grid-2,.grid-3,.grid-4,.hero-pkhám phá .hero-grid,.dashboard-grid,.portal-shell,.statusbar{grid-template-columns:1fr}
       .content{padding:20px}
     }
   </style>
@@ -92,8 +92,8 @@
 <body>
   <div class="app">
     <aside class="sidebar">
-      <h1>Vườn Riêng Trong Tầm Tay</h1>
-      <p>HTML preview cho full UI spec của toàn bộ website + portal theo Mẫu 1.</p>
+      <h1>Ai trồng cây</h1>
+      <p>HTML pkhám phá cho full UI spec của toàn bộ website + portal theo Mẫu 1.</p>
       <div class="navgroup">
         <h4>Tổng quan</h4>
         <a href="#big-idea">Big idea</a>
@@ -131,7 +131,7 @@
       </div>
     </aside>
     <main class="content">
-      <div class="topnote"><strong>Mục đích file này:</strong> cho anh xem trực tiếp bằng HTML toàn bộ hướng giao diện theo Mẫu 1, thay cho file markdown. Đây là bản review để chốt UI trước khi sang DB/schema.</div>
+      <div class="topnote"><strong>Mục đích file này:</strong> cho anh xem trực tiếp bằng HTML toàn bộ hướng giao diện theo Mẫu 1, thay cho file markdown. Đây là bản khám phá để chốt UI trước khi sang DB/schema.</div>
 
       <section class="section" id="big-idea">
         <div class="card">
@@ -167,7 +167,7 @@
         <div class="card">
           <div class="eyebrow">Public website</div>
           <h2>Homepage — Trang chủ chốt narrative</h2>
-          <div class="hero-preview">
+          <div class="hero-pkhám phá">
             <div class="hero-grid">
               <div>
                 <div class="eyebrow">Vườn thuê số hóa cho gia đình hiện đại</div>
@@ -175,7 +175,7 @@
                 <p class="sub">Theo dõi bằng webcam, xem dữ liệu chất lượng rõ ràng và an tâm hơn về thực phẩm mỗi ngày.</p>
                 <div class="cta-row">
                   <a class="btn primary" href="#">Chọn gói phù hợp</a>
-                  <a class="btn secondary" href="#">Xem demo vườn realtime</a>
+                  <a class="btn secondary" href="#">Xem trải nghiệm vườn realtime</a>
                 </div>
                 <div class="chips">
                   <div class="chip">Webcam 24/7</div>
@@ -296,10 +296,10 @@
       <section class="section" id="dashboard">
         <div class="card">
           <h2>Portal Dashboard — Tổng quan vườn của tôi</h2>
-          <div class="portal-preview">
+          <div class="portal-pkhám phá">
             <div class="portal-shell">
               <div class="portal-side">
-                <strong>Vườn Nhà Tùng</strong>
+                <strong>Ai trồng cây Tùng</strong>
                 <ul>
                   <li>Tổng quan</li>
                   <li>Live webcam</li>
@@ -335,7 +335,7 @@
             </div>
           </div>
           <div class="grid-2" style="margin-top:18px">
-            <div class="mini"><strong>Widget priority</strong><ul><li>Live preview</li><li>Summary hôm nay</li><li>Harvest countdown</li><li>Latest care log</li><li>Alerts</li></ul></div>
+            <div class="mini"><strong>Widget priority</strong><ul><li>Live pkhám phá</li><li>Summary hôm nay</li><li>Harvest countdown</li><li>Latest care log</li><li>Alerts</li></ul></div>
             <div class="mini"><strong>Mục tiêu 10 giây</strong><p class="muted">Phải trả lời được: vườn hôm nay ổn không, có gì mới, còn bao lâu thu hoạch, camera có hoạt động không.</p></div>
           </div>
         </div>

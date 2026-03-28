@@ -90,18 +90,18 @@ p { margin: 0 0 16px; color: rgba(36,49,39,.82); line-height: 1.72; }
 .menu-toggle { display:none; }
 .mobile-panel-inner { padding: 0 0 18px; display:grid; gap:10px; }
 .mobile-panel-inner a { padding: 12px 14px; background: rgba(255,255,255,.8); border: 1px solid var(--border); border-radius: 14px; }
-.review-ribbon {
+.khám phá-ribbon {
   padding: 16px 0;
   border-bottom: 1px solid var(--line);
   background: linear-gradient(90deg, rgba(123,196,127,.14), rgba(255,255,255,.52));
 }
-.review-ribbon-inner {
+.khám phá-ribbon-inner {
   display: flex;
   justify-content: space-between;
   gap: 18px;
   align-items: center;
 }
-.review-ribbon strong, .review-ribbon a { color: var(--forest-deep); }
+.khám phá-ribbon strong, .khám phá-ribbon a { color: var(--forest-deep); }
 .hero-grid, .grid-2, .feature-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 34px; align-items: center; }
 .hero-card, .card, .panel, .mockup, .metric, .timeline-item, .faq-item, .pricing-card, .portal-card, .stat-card, .glass-card {
   background: rgba(255,255,255,.88); border: 1px solid rgba(217,226,216,.9); border-radius: var(--radius); box-shadow: var(--shadow-soft);
@@ -268,8 +268,8 @@ label { font-weight: 700; display:block; margin-bottom: 8px; }
 .timeline-compact { display:grid; gap:12px; }
 .timeline-compact .timeline-item { padding: 18px 20px; }
 .portal-status-line { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 14px; border-radius:16px; background: rgba(234,245,234,.65); margin-bottom: 12px; }
-.review-checklist { display: grid; gap: 12px; }
-.review-step {
+.khám phá-checklist { display: grid; gap: 12px; }
+.khám phá-step {
   display: flex;
   gap: 14px;
   flex-direction: column;
@@ -278,9 +278,9 @@ label { font-weight: 700; display:block; margin-bottom: 8px; }
   border: 1px solid var(--line);
   background: rgba(255,255,255,.74);
 }
-.review-step span { color: rgba(36,49,39,.74); }
-.review-mini-grid { margin-top: 18px; }
-.review-link-card { display: block; }
+.khám phá-step span { color: rgba(36,49,39,.74); }
+.khám phá-mini-grid { margin-top: 18px; }
+.khám phá-link-card { display: block; }
 .page-map { display: grid; gap: 12px; margin-top: 18px; }
 .page-map a {
   display: flex;
@@ -294,8 +294,8 @@ label { font-weight: 700; display:block; margin-bottom: 8px; }
 .page-map a span { color: rgba(36,49,39,.68); }
 @media (max-width: 1024px) {
   .hero-grid, .grid-2, .portal-layout, .footer-grid, .portal-grid, .story-grid, .comparison-grid, .story-band, .split-card, .table-row, .feature-grid { grid-template-columns: 1fr; }
-  .cards-4, .badge-grid, .portal-kpis, .review-ribbon-inner { grid-template-columns: repeat(2,1fr); }
-  .review-ribbon-inner { display: grid; }
+  .cards-4, .badge-grid, .portal-kpis, .khám phá-ribbon-inner { grid-template-columns: repeat(2,1fr); }
+  .khám phá-ribbon-inner { display: grid; }
   .cards-3, .pricing-grid, .value-strip, .stats-grid, .form-grid, .faq-grid, .steps-grid, .kpi-row { grid-template-columns: 1fr; }
   .portal-cards { grid-template-columns: 1fr; }
   .span-3, .span-4, .span-5, .span-6, .span-7, .span-8, .span-9, .span-12 { grid-column: auto; }
@@ -310,3 +310,7 @@ label { font-weight: 700; display:block; margin-bottom: 8px; }
   .hero-shell, .glass-card, .portal-card, .card, .pricing-card, .timeline-item { padding: 22px; }
   .hero-floating-card { position: static; max-width: none; margin-top: 18px; }
 }
+
+.company-block { padding:24px 0 0; border-top:1px solid rgba(255,255,255,.08); }
+.company-block h3 { font-size:18px; margin-bottom:10px; }
+.company-block p { margin:0 0 8px; color: rgba(36,49,39,.82); }

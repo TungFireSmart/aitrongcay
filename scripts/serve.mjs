@@ -22,7 +22,7 @@ const contentTypes = {
 
 function safePath(urlPath) {
   const cleaned = decodeURIComponent((urlPath || '/').split('?')[0]);
-  const requested = cleaned === '/' ? '/start-here.html' : cleaned;
+  const requested = cleaned === '/' ? '/index.html' : cleaned;
   const candidate = normalize(join(root, requested));
   if (!candidate.startsWith(root)) return null;
   return candidate;
@@ -54,7 +54,7 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, host, () => {
   console.log(`aitrongcay running at http://${host}:${port}`);
-  console.log('Open this first: /start-here.html');
+  console.log('Open this first: /index.html');
   console.log('Then review website flow: /index.html');
-  console.log('Portal demo: /portal/dashboard.html');
+  console.log('Khu vườn demo: /portal/dashboard.html');
 });

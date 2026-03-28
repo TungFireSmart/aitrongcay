@@ -27,7 +27,7 @@ document.querySelectorAll('[data-fake-submit]').forEach(form => {
     const notice = form.querySelector('.form-result') || document.createElement('div');
     notice.className = 'notice form-result';
     notice.style.marginTop = '16px';
-    notice.textContent = 'Đã ghi nhận thao tác demo. Prototype này vẫn là HTML/CSS/JS tĩnh, nhưng flow UX đã được mô phỏng đủ để duyệt chi tiết.';
+    notice.textContent = 'Đã ghi nhận thông tin của anh/chị. Đội ngũ Ai trồng cây sẽ liên hệ lại để tư vấn gói phù hợp trong thời gian sớm nhất.';
     form.appendChild(notice);
   });
 });
