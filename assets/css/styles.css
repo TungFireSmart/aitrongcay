@@ -35,6 +35,61 @@ body {
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 button, input, select, textarea { font: inherit; }
+.media-thumb, .image-cover {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 22px;
+}
+.media-thumb {
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  background: linear-gradient(135deg, rgba(123,196,127,.16), rgba(255,255,255,.9));
+}
+.hero-photo-panel {
+  display: grid;
+  gap: 16px;
+}
+.hero-photo-main {
+  aspect-ratio: 16 / 11;
+  border-radius: 30px;
+}
+.hero-photo-caption {
+  padding: 16px 18px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.84);
+  border: 1px solid var(--line);
+}
+.card-media {
+  margin: -24px -24px 18px;
+  overflow: hidden;
+  border-radius: 28px 28px 22px 22px;
+}
+.card-media .media-thumb {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.article-card, .market-card, .product-card {
+  overflow: hidden;
+}
+.article-card h3, .market-card h3, .product-card h3 {
+  margin-top: 0;
+}
+.mini-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.mini-photo-grid .media-thumb {
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+}
+.portal-card .media-thumb,
+.portal-card .image-cover {
+  margin-bottom: 18px;
+}
 .container { width: min(var(--container), calc(100% - 32px)); margin: 0 auto; }
 .section { padding: 92px 0; }
 .section-tight { padding: 56px 0; }
@@ -163,6 +218,11 @@ p { margin: 0 0 16px; color: rgba(36,49,39,.82); line-height: 1.72; }
     radial-gradient(circle at top right, rgba(123,196,127,.35), transparent 30%),
     url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"><rect width="800" height="500" fill="%231d3428"/><rect x="70" y="200" width="660" height="180" rx="28" fill="%233b6c4a"/><rect x="90" y="160" width="130" height="210" rx="24" fill="%236ea05f"/><rect x="250" y="135" width="120" height="235" rx="24" fill="%2384b76e"/><rect x="405" y="170" width="130" height="195" rx="24" fill="%236fa85d"/><rect x="565" y="145" width="150" height="225" rx="24" fill="%2397cf79"/><circle cx="690" cy="90" r="34" fill="%23f4d88a"/></svg>') center/cover;
   position:relative; overflow:hidden;
+}
+.camera-view.photo-view {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.4)),
+    var(--photo-image, url('../images/hero-greenhouse.svg')) center/cover;
 }
 .camera-overlay { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:space-between; padding:18px; color:white; }
 .label { display:inline-flex; padding:8px 12px; border-radius:999px; background: rgba(255,255,255,.14); color: inherit; font-size:13px; font-weight:700; }
