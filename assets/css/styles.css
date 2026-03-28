@@ -531,10 +531,125 @@ label { font-weight: 700; display:block; margin-bottom: 8px; }
   color: rgba(36,49,39,.74);
   line-height: 1.65;
 }
+.hero-notes,
+.market-pulse,
+.reading-moods,
+.tool-meta-grid {
+  display: grid;
+  gap: 14px;
+}
+.hero-notes { margin-top: 22px; }
+.note-row,
+.market-pulse-item,
+.reading-mood,
+.tool-meta-item {
+  padding: 16px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.82);
+  box-shadow: var(--shadow-soft);
+}
+.note-row strong,
+.market-pulse-item strong,
+.reading-mood strong,
+.tool-meta-item strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--forest-deep);
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+.metric-soft {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(234,245,234,.82));
+  border: 1px solid var(--line);
+}
+.metric-soft .subtle { display:block; margin-bottom: 8px; }
+.metric-soft strong {
+  display:block;
+  font-size: 1.56rem;
+  color: var(--forest);
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+.market-pulse { grid-template-columns: repeat(3, 1fr); }
+.reading-moods { grid-template-columns: repeat(3, 1fr); }
+.tool-meta-grid { grid-template-columns: repeat(3, 1fr); }
+.market-listing {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+.listing-row {
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  align-items:flex-start;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(247,244,236,.88));
+  border: 1px solid var(--line);
+}
+.listing-row span,
+.note-row span,
+.market-pulse-item span,
+.reading-mood span,
+.tool-meta-item span { color: rgba(36,49,39,.72); line-height: 1.65; }
+.listing-price {
+  white-space: nowrap;
+  color: var(--forest);
+  font-weight: 800;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+.reading-mood {
+  min-height: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(247,244,236,.84));
+}
+.tool-shelf {
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 18px;
+  align-items: stretch;
+}
+.tool-shelf-visual {
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.86);
+  box-shadow: var(--shadow-soft);
+}
+.tool-shelf-copy {
+  padding: 24px;
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(234,245,234,.74));
+  border: 1px solid var(--line);
+}
+.product-card .meta-row { align-items: center; }
+.product-card .btn { width: 100%; }
+.product-card p:last-of-type { margin-bottom: 0; }
+.card-link-grid {
+  display:grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+.card-link-grid a {
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  padding:16px 18px;
+  border-radius:18px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.82);
+}
+.card-link-grid a span { color: rgba(36,49,39,.68); }
 @media (max-width: 1024px) {
-  .portal-welcome { grid-template-columns: 1fr; }
+  .portal-welcome,
+  .market-pulse,
+  .reading-moods,
+  .tool-meta-grid,
+  .tool-shelf { grid-template-columns: 1fr; }
 }
 @media (max-width: 820px) {
-  .activity-row { flex-direction: column; align-items: flex-start; }
+  .activity-row,
+  .listing-row { flex-direction: column; align-items: flex-start; }
   .stat-stack { grid-template-columns: 1fr; }
 }
