@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garden Homepage Concepts Preview</title>
+  <style>
+    :root {
+      --bg: #0f1720;
+      --panel: #121b24;
+      --text: #eaf2ec;
+      --muted: #98a8a0;
+      --line: rgba(255,255,255,.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: Inter, system-ui, sans-serif; background: linear-gradient(180deg,#0a1016,#101923 25%,#0c131a);
+      color: var(--text); line-height: 1.5;
+    }
+    .topbar {
+      position: sticky; top: 0; z-index: 20; backdrop-filter: blur(12px);
+      background: rgba(10,16,22,.75); border-bottom: 1px solid var(--line);
+      padding: 14px 24px;
+    }
+    .topbar h1 { margin: 0; font-size: 18px; }
+    .topbar p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 28px 20px 80px; }
+    .navlinks { display: flex; gap: 12px; flex-wrap: wrap; margin: 0 0 24px; }
+    .navlinks a {
+      color: #d9e5dc; text-decoration: none; border: 1px solid var(--line); padding: 10px 14px; border-radius: 999px;
+      background: rgba(255,255,255,.03); font-size: 14px;
+    }
+    .concept { margin: 38px 0 72px; border: 1px solid var(--line); border-radius: 28px; overflow: hidden; background: #0f161d; box-shadow: 0 10px 40px rgba(0,0,0,.25); }
+    .concept-head { padding: 26px 28px; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; justify-content: space-between; gap: 20px; align-items: end; }
+    .concept-head h2 { margin: 0; font-size: 28px; }
+    .concept-head p { margin: 6px 0 0; color: var(--muted); }
+    .badge { padding: 8px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .preview { background: #fff; color: #142018; min-height: 600px; }
+
+    /* generic website blocks */
+    .site { font-family: Inter, system-ui, sans-serif; }
+    .site .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    .site-header { display:flex; justify-content:space-between; align-items:center; padding:20px 0; }
+    .brand { font-weight:800; letter-spacing:-.02em; }
+    .menu { display:flex; gap:20px; color:#47614f; font-size:14px; align-items:center; }
+    .cta, .cta2 { display:inline-block; padding:12px 18px; border-radius:14px; text-decoration:none; font-weight:600; }
+    .hero { padding: 34px 0 56px; }
+    .hero-grid { display:grid; grid-template-columns: 1.05fr .95fr; gap: 34px; align-items:center; }
+    .eyebrow { display:inline-block; padding:7px 12px; border-radius:999px; font-size:12px; font-weight:700; margin-bottom:16px; }
+    .headline { font-size: clamp(34px,5vw,60px); line-height:1.05; margin:0 0 16px; letter-spacing:-.04em; }
+    .sub { font-size: 18px; max-width: 640px; opacity:.86; margin:0 0 22px; }
+    .cta-row { display:flex; gap:14px; flex-wrap:wrap; }
+    .mock, .card, .pricing, .faq, .review, .proof, .mini-shot { border-radius: 24px; }
+    .section { padding: 24px 0 56px; }
+    .section h3 { font-size: 28px; margin:0 0 10px; letter-spacing:-.03em; }
+    .muted { color:#5d7264; }
+    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .site-footer { padding: 34px 0 50px; border-top:1px solid rgba(0,0,0,.08); color:#617164; }
+
+    /* concept 1 */
+    .c1 { background:#f7f4ec; color:#1d2d22; }
+    .c1 .eyebrow { background:#e4efdf; color:#215b3d; }
+    .c1 .cta { background:#1f6b45; color:#fff; }
+    .c1 .cta2 { border:1px solid #1f6b45; color:#1f6b45; }
+    .c1 .mock { background:linear-gradient(135deg,#ffffff,#eef4ed); padding:20px; box-shadow:0 18px 40px rgba(31,107,69,.15); }
+    .c1 .cam { background:#17231b; color:#dce7df; border-radius:18px; padding:18px; min-height:220px; position:relative; overflow:hidden; }
+    .c1 .cam:before { content:''; position:absolute; inset:18px 18px 58px; border-radius:14px; background:linear-gradient(135deg,#456f51,#8ecf82); }
+    .c1 .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px; }
+    .c1 .mini-shot,.c1 .card,.c1 .pricing,.c1 .faq,.c1 .review,.c1 .proof { background:#fff; padding:18px; box-shadow:0 10px 30px rgba(31,107,69,.08); }
+    .c1 .pricing.featured { border:2px solid #7bc47f; transform: translateY(-6px); }
+    .c1 .final { background:linear-gradient(135deg,#1f6b45,#7bc47f); color:#fff; padding:28px; border-radius:28px; }
+
+    /* concept 2 */
+    .c2 { background:#f3f7f5; color:#152920; }
+    .c2 .eyebrow { background:#dff4ee; color:#137765; }
+    .c2 .cta { background:#163a2d; color:#fff; }
+    .c2 .cta2 { border:1px solid #163a2d; color:#163a2d; }
+    .c2 .hero { background:radial-gradient(circle at top right,#d5fff0 0,#f3f7f5 40%,#f3f7f5 70%); }
+    .c2 .mock { background:#0f1e1b; color:#e2fbf2; padding:18px; box-shadow:0 20px 50px rgba(15,30,27,.18); }
+    .c2 .dash { display:grid; grid-template-columns:1.2fr .8fr; gap:12px; }
+    .c2 .screen, .c2 .kpi, .c2 .panel { background:#152823; border:1px solid rgba(255,255,255,.08); border-radius:18px; }
+    .c2 .screen { min-height:280px; padding:16px; position:relative; overflow:hidden; }
+    .c2 .screen:before { content:''; position:absolute; inset:20px; border-radius:14px; background:linear-gradient(135deg,#275546,#6bd0a9); }
+    .c2 .panel { padding:14px; display:grid; gap:10px; }
+    .c2 .kpi { padding:16px; }
+    .c2 .proof,.c2 .pricing,.c2 .faq,.c2 .review { background:#fff; padding:18px; border:1px solid rgba(22,58,45,.08); box-shadow:0 10px 30px rgba(22,58,45,.06); }
+    .c2 .final { background:#163a2d; color:#eff8f3; padding:30px; border-radius:28px; }
+
+    /* concept 3 */
+    .c3 { background:#faf6ed; color:#2d382c; font-family: "Be Vietnam Pro", Inter, sans-serif; }
+    .c3 .headline { font-family: Georgia, serif; letter-spacing:-.03em; }
+    .c3 .eyebrow { background:#eef4e5; color:#5d7c47; }
+    .c3 .cta { background:#5d7c47; color:#fff; }
+    .c3 .cta2 { border:1px solid #5d7c47; color:#5d7c47; }
+    .c3 .mock { background:linear-gradient(135deg,#fffef8,#f1ead8); padding:18px; box-shadow:0 18px 44px rgba(93,124,71,.12); }
+    .c3 .story { min-height:280px; border-radius:20px; background:linear-gradient(135deg,#c7d9ae,#f6ecd2); padding:20px; display:grid; grid-template-rows:1fr auto; }
+    .c3 .storyline { display:grid; gap:10px; }
+    .c3 .step { background:rgba(255,255,255,.65); border-radius:16px; padding:12px 14px; }
+    .c3 .review,.c3 .pricing,.c3 .faq,.c3 .proof { background:#fffdf8; padding:18px; border:1px solid rgba(93,124,71,.10); box-shadow:0 10px 26px rgba(93,124,71,.07); }
+    .c3 .final { background:linear-gradient(135deg,#5d7c47,#8fbf6a); color:#fff; padding:30px; border-radius:28px; }
+
+    .small { font-size: 13px; opacity:.8; }
+    ul.clean { margin: 10px 0 0; padding-left: 18px; }
+    @media (max-width: 900px) {
+      .hero-grid, .grid-3, .grid-2, .c2 .dash { grid-template-columns:1fr; }
+      .menu { display:none; }
+      .concept-head { flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <h1>Preview 3 mẫu homepage — Vườn thuê số hóa</h1>
+    <p>File xem nhanh để duyệt hướng hình ảnh trực tiếp. Cuộn xuống để xem từng mẫu.</p>
+  </div>
+  <div class="wrap">
+    <div class="navlinks">
+      <a href="#m1">Mẫu 1 — Vườn Riêng Trong Tầm Tay</a>
+      <a href="#m2">Mẫu 2 — Nông Trại Số Minh Bạch</a>
+      <a href="#m3">Mẫu 3 — Nhật Ký Khu Vườn Gia Đình</a>
+    </div>
+
+    <section class="concept" id="m1">
+      <div class="concept-head">
+        <div>
+          <h2>Mẫu 1 — Vườn Riêng Trong Tầm Tay</h2>
+          <p>Cân bằng nhất giữa cảm giác sở hữu, niềm tin an toàn thực phẩm và trải nghiệm số.</p>
+        </div>
+        <div class="badge" style="background:#214b34;color:#ddf0df;">Khuyến nghị chọn</div>
+      </div>
+      <div class="preview site c1">
+        <div class="container">
+          <div class="site-header">
+            <div class="brand">Vườn Riêng</div>
+            <div class="menu"><span>Cách hoạt động</span><span>Gói vườn</span><span>Trải nghiệm số</span><span>An toàn thực phẩm</span><a class="cta" href="#">Xem gói vườn</a></div>
+          </div>
+          <div class="hero">
+            <div class="hero-grid">
+              <div>
+                <div class="eyebrow">Sở hữu • Minh bạch • Gia đình</div>
+                <h1 class="headline">Sở hữu trải nghiệm trồng rau sạch như một khu vườn riêng của gia đình bạn</h1>
+                <p class="sub">Theo dõi bằng webcam 24/7, xem dữ liệu chất lượng rõ ràng và an tâm hơn về thực phẩm mỗi ngày.</p>
+                <div class="cta-row"><a class="cta" href="#">Chọn gói phù hợp</a><a class="cta2" href="#">Xem demo vườn realtime</a></div>
+              </div>
+              <div class="mock">
+                <div class="cam"></div>
+                <div class="stats">
+                  <div class="mini-shot"><strong>24/7</strong><div class="small">Webcam</div></div>
+                  <div class="mini-shot"><strong>Ổn định</strong><div class="small">Chất lượng</div></div>
+                  <div class="mini-shot"><strong>+4 ngày</strong><div class="small">Tới thu hoạch</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="grid-3">
+              <div class="card"><strong>Nhìn thấy 24/7</strong><p class="muted">Webcam, snapshot, timelapse.</p></div>
+              <div class="card"><strong>Minh bạch chất lượng</strong><p class="muted">Dữ liệu, nhật ký, truy xuất lô.</p></div>
+              <div class="card"><strong>Đây là vườn của bạn</strong><p class="muted">Tên vườn, lịch vụ, cảm giác sở hữu rõ.</p></div>
+            </div>
+          </div>
+          <div class="section grid-2">
+            <div>
+              <h3>Vườn của bạn trên màn hình</h3>
+              <p class="muted">Không chỉ nhận rau, mà đang theo dõi cả quá trình lớn lên của khu vườn riêng.</p>
+              <ul class="clean"><li>Camera live</li><li>AI summary mỗi ngày</li><li>Nhật ký chăm sóc minh bạch</li></ul>
+            </div>
+            <div class="card">
+              <strong>AI Gardener</strong>
+              <p class="muted">“Hôm nay vườn phát triển tốt. Xà lách lô 02 còn khoảng 4 ngày tới thu hoạch.”</p>
+            </div>
+          </div>
+          <div class="section">
+            <h3>An toàn thực phẩm nhìn thấy được</h3>
+            <div class="grid-3">
+              <div class="proof">Quy trình chuẩn hóa</div>
+              <div class="proof">Dữ liệu cảm biến</div>
+              <div class="proof">Nhật ký chăm sóc</div>
+            </div>
+          </div>
+          <div class="section">
+            <h3>Gói vườn nổi bật</h3>
+            <div class="grid-3">
+              <div class="pricing">Mini<br><span class="small">Cho 1–2 người</span></div>
+              <div class="pricing featured">Family<br><span class="small">Phổ biến nhất</span></div>
+              <div class="pricing">Premium<br><span class="small">Trải nghiệm trọn vẹn</span></div>
+            </div>
+          </div>
+          <div class="section final">
+            <h3 style="margin-top:0;color:#fff;">Bắt đầu với khu vườn số đầu tiên của gia đình bạn</h3>
+            <p>Đăng ký tư vấn hoặc xem demo trực tiếp trước khi chọn gói.</p>
+          </div>
+          <div class="site-footer">Footer / Chính sách / Liên hệ</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="concept" id="m2">
+      <div class="concept-head">
+        <div>
+          <h2>Mẫu 2 — Nông Trại Số Minh Bạch</h2>
+          <p>Mạnh nhất về cảm giác công nghệ, dữ liệu realtime, webcam 24/7 và AI.</p>
+        </div>
+        <div class="badge" style="background:#15372d;color:#cff3e6;">Công nghệ mạnh</div>
+      </div>
+      <div class="preview site c2">
+        <div class="container">
+          <div class="site-header">
+            <div class="brand">AgriTrace</div>
+            <div class="menu"><span>Portal demo</span><span>Dữ liệu minh bạch</span><span>How it works</span><a class="cta" href="#">Xem portal demo</a></div>
+          </div>
+          <div class="hero">
+            <div class="hero-grid">
+              <div>
+                <div class="eyebrow">Webcam • Dữ liệu • AI</div>
+                <h1 class="headline">Một khu vườn sạch bạn có thể theo dõi 24/7 bằng dữ liệu và webcam</h1>
+                <p class="sub">Dành cho người muốn rau sạch nhưng không muốn mơ hồ về quy trình, chất lượng và an toàn thực phẩm.</p>
+                <div class="cta-row"><a class="cta" href="#">Xem demo realtime</a><a class="cta2" href="#">Chọn gói phù hợp</a></div>
+              </div>
+              <div class="mock">
+                <div class="dash">
+                  <div class="screen"></div>
+                  <div class="panel">
+                    <div class="kpi"><strong>24/7</strong><div class="small">Live feed</div></div>
+                    <div class="kpi"><strong>AI OK</strong><div class="small">Health summary</div></div>
+                    <div class="kpi"><strong>Traceable</strong><div class="small">Harvest lot</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="grid-3">
+              <div class="proof"><strong>Webcam 24/7</strong><p class="muted">Nhìn thấy ngay tình trạng thực tế.</p></div>
+              <div class="proof"><strong>Nhật ký can thiệp</strong><p class="muted">Ai làm gì, lúc nào.</p></div>
+              <div class="proof"><strong>Truy xuất lô</strong><p class="muted">Bằng chứng theo từng đợt thu hoạch.</p></div>
+            </div>
+          </div>
+          <div class="section grid-2">
+            <div class="proof"><h3>What you can see</h3><ul class="clean"><li>Camera live</li><li>Chỉ số realtime</li><li>AI summary</li><li>Dự báo thu hoạch</li></ul></div>
+            <div class="proof"><h3>An toàn thực phẩm bằng dữ liệu</h3><p class="muted">Evidence board với dữ liệu, nhật ký và báo cáo dễ hiểu.</p></div>
+          </div>
+          <div class="section">
+            <h3>Gói vườn thiên về khả năng số</h3>
+            <div class="grid-3">
+              <div class="pricing">Mini Digital</div>
+              <div class="pricing">Family Control</div>
+              <div class="pricing">Premium Insight</div>
+            </div>
+          </div>
+          <div class="section final">
+            <h3 style="margin-top:0;color:#fff;">Đăng ký tư vấn và xem portal demo</h3>
+            <p>Phù hợp nếu muốn thị trường nhớ ngay USP số hóa của mô hình.</p>
+          </div>
+          <div class="site-footer">Footer / Portal / Tài liệu / Liên hệ</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="concept" id="m3">
+      <div class="concept-head">
+        <div>
+          <h2>Mẫu 3 — Nhật Ký Khu Vườn Gia Đình</h2>
+          <p>Mạnh nhất về cảm xúc, lifestyle, và sự gắn bó của gia đình với khu vườn.</p>
+        </div>
+        <div class="badge" style="background:#667d50;color:#eef6df;">Cảm xúc mạnh</div>
+      </div>
+      <div class="preview site c3">
+        <div class="container">
+          <div class="site-header">
+            <div class="brand">Khu Vườn Nhà Mình</div>
+            <div class="menu"><span>Câu chuyện</span><span>Cách hoạt động</span><span>Gói gia đình</span><a class="cta" href="#">Khám phá vườn của bạn</a></div>
+          </div>
+          <div class="hero">
+            <div class="hero-grid">
+              <div>
+                <div class="eyebrow">Gia đình • Gắn bó • An tâm</div>
+                <h1 class="headline">Mỗi ngày mở điện thoại, thấy khu vườn sạch của gia đình mình đang lớn lên</h1>
+                <p class="sub">Một trải nghiệm sống xanh, minh bạch và dịu dàng hơn cho bữa ăn hàng ngày của những người mình yêu thương.</p>
+                <div class="cta-row"><a class="cta" href="#">Khám phá cách hoạt động</a><a class="cta2" href="#">Xem demo vườn thật</a></div>
+              </div>
+              <div class="mock">
+                <div class="story">
+                  <div></div>
+                  <div class="storyline">
+                    <div class="step">Ngày 1 — Kích hoạt khu vườn</div>
+                    <div class="step">Ngày 7 — Cây bắt đầu lớn rõ</div>
+                    <div class="step">Ngày 21 — Sẵn sàng gần thu hoạch</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section grid-3">
+            <div class="proof">Không còn mua rau trong cảm giác mơ hồ</div>
+            <div class="proof">Bạn nhìn thấy cả quá trình lớn lên</div>
+            <div class="proof">Mỗi mùa vụ đều có dấu ấn gia đình bạn</div>
+          </div>
+          <div class="section grid-2">
+            <div class="review"><h3>Nhật ký khu vườn của bạn</h3><p class="muted">Timeline từ kích hoạt, nảy mầm, chăm sóc tới khi lên bàn ăn.</p></div>
+            <div class="review"><h3>Webcam & portal</h3><p class="muted">Công nghệ xuất hiện như lớp tăng niềm tin, không làm mất sự ấm áp.</p></div>
+          </div>
+          <div class="section">
+            <h3>Gói vườn phù hợp từng gia đình</h3>
+            <div class="grid-3">
+              <div class="pricing">Bắt đầu nhẹ nhàng</div>
+              <div class="pricing">Đủ dùng cho gia đình</div>
+              <div class="pricing">Trải nghiệm trọn vẹn</div>
+            </div>
+          </div>
+          <div class="section final">
+            <h3 style="margin-top:0;color:#fff;">Bắt đầu hành trình với khu vườn của gia đình bạn</h3>
+            <p>Phù hợp nếu muốn thương hiệu rất giàu cảm xúc và tính kết nối.</p>
+          </div>
+          <div class="site-footer">Footer / Câu chuyện / Chính sách / Liên hệ</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
