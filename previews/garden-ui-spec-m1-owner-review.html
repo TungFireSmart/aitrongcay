@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vườn Riêng Trong Tầm Tay — Full UI Spec Preview</title>
+  <style>
+    :root {
+      --green:#1F6B45;
+      --green-2:#7BC47F;
+      --cream:#F7F4EC;
+      --white:#FFFFFF;
+      --charcoal:#243127;
+      --gold:#C8A96B;
+      --mint:#EAF5EA;
+      --sky:#DDEFF6;
+      --sand:#EFE6D6;
+      --amber:#D89B2B;
+      --red:#C95C54;
+      --line:#D9E2D8;
+      --muted:#617164;
+      --bg:#f3f1ea;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--charcoal);background:linear-gradient(180deg,#f5f2e8,#f1f5ef)}
+    .app{display:grid;grid-template-columns:300px 1fr;min-height:100vh}
+    .sidebar{position:sticky;top:0;height:100vh;overflow:auto;padding:24px 20px;border-right:1px solid var(--line);background:rgba(255,255,255,.82);backdrop-filter:blur(10px)}
+    .sidebar h1{font-size:20px;line-height:1.2;margin:0 0 8px}
+    .sidebar p{margin:0 0 18px;color:var(--muted);font-size:14px}
+    .navgroup{margin:18px 0 0}
+    .navgroup h4{margin:0 0 10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6f7d73}
+    .sidebar a{display:block;text-decoration:none;color:var(--charcoal);padding:10px 12px;border-radius:12px;font-size:14px;margin:2px 0}
+    .sidebar a:hover{background:#edf3ec}
+    .content{padding:28px 34px 80px}
+    .topnote{background:#132018;color:#edf6ef;border-radius:20px;padding:18px 22px;margin-bottom:24px}
+    .topnote strong{color:#fff}
+    .section{margin:0 0 28px}
+    .card{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 10px 30px rgba(31,107,69,.06)}
+    .section h2{font-size:32px;letter-spacing:-.03em;margin:0 0 16px}
+    .section h3{font-size:24px;letter-spacing:-.02em;margin:0 0 14px}
+    .eyebrow{display:inline-block;padding:7px 12px;border-radius:999px;background:#e4efdf;color:var(--green);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
+    .grid-2,.grid-3,.grid-4{display:grid;gap:18px}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+    .mini{padding:18px;border-radius:20px;border:1px solid var(--line);background:#fff}
+    .muted{color:var(--muted)}
+    .hero-preview{background:var(--cream);border-radius:30px;padding:26px;border:1px solid #e5e2d9}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:center}
+    .headline{font-size:clamp(32px,5vw,58px);line-height:1.04;letter-spacing:-.05em;margin:0 0 14px}
+    .sub{font-size:18px;color:#506154;line-height:1.7;margin:0 0 18px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 18px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:14px;font-weight:600;text-decoration:none}
+    .btn.primary{background:var(--green);color:#fff}
+    .btn.secondary{background:#fff;color:var(--green);border:1px solid var(--green)}
+    .chips{display:flex;gap:10px;flex-wrap:wrap}
+    .chip{background:#fff;border:1px solid #dfe8dd;border-radius:999px;padding:9px 12px;font-size:13px}
+    .mock{background:linear-gradient(135deg,#ffffff,#edf3ee);border-radius:28px;padding:18px;box-shadow:0 18px 40px rgba(31,107,69,.10)}
+    .cam{height:290px;border-radius:22px;background:#152019;position:relative;overflow:hidden;margin-bottom:14px}
+    .cam:before{content:'';position:absolute;inset:18px;border-radius:16px;background:linear-gradient(135deg,#496d50,#93d78a)}
+    .cam:after{content:'LIVE';position:absolute;top:16px;left:16px;background:#d94343;color:#fff;font-size:12px;font-weight:700;padding:6px 9px;border-radius:999px}
+    .floating{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .floating .mini{background:#fff;box-shadow:0 10px 20px rgba(0,0,0,.05)}
+    .pricing.featured{border:2px solid var(--green-2);transform:translateY(-4px)}
+    .portal-preview{background:#fbfcfa;border:1px solid var(--line);border-radius:28px;overflow:hidden}
+    .portal-shell{display:grid;grid-template-columns:250px 1fr;min-height:560px}
+    .portal-side{background:#f3f7f1;border-right:1px solid var(--line);padding:18px}
+    .portal-main{padding:20px}
+    .statusbar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 16px}
+    .statusbar .mini{background:#fff}
+    .dashboard-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+    .widget{background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px}
+    .live-thumb{height:220px;border-radius:16px;background:linear-gradient(135deg,#4a7050,#8ed285);position:relative}
+    .timeline .item{padding:12px 0;border-top:1px dashed #d8e1d8}
+    .timeline .item:first-child{border-top:none;padding-top:0}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700}
+    .tag.ok{background:var(--mint);color:#2d8a57}
+    .tag.warn{background:#fff4df;color:#a86b09}
+    .tag.info{background:var(--sky);color:#2d6c87}
+    ul{margin:10px 0 0 18px;padding:0}
+    li{margin:6px 0}
+    .footerbox{background:linear-gradient(135deg,var(--green),var(--green-2));color:#fff;border-radius:26px;padding:24px}
+    @media (max-width: 1100px){
+      .app{grid-template-columns:1fr}
+      .sidebar{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line)}
+      .hero-grid,.grid-2,.grid-3,.grid-4,.hero-preview .hero-grid,.dashboard-grid,.portal-shell,.statusbar{grid-template-columns:1fr}
+      .content{padding:20px}
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>Vườn Riêng Trong Tầm Tay</h1>
+      <p>HTML preview cho full UI spec của toàn bộ website + portal theo Mẫu 1.</p>
+      <div class="navgroup">
+        <h4>Tổng quan</h4>
+        <a href="#big-idea">Big idea</a>
+        <a href="#design-system">Design system</a>
+      </div>
+      <div class="navgroup">
+        <h4>Public website</h4>
+        <a href="#homepage">Homepage</a>
+        <a href="#how-it-works">Cách hoạt động</a>
+        <a href="#plans">Gói vườn</a>
+        <a href="#digital">Trải nghiệm số</a>
+        <a href="#safety">An toàn thực phẩm</a>
+        <a href="#story">Câu chuyện vườn của bạn</a>
+        <a href="#faq">FAQ / Review / Blog</a>
+        <a href="#signup">Đăng ký / Onboarding</a>
+      </div>
+      <div class="navgroup">
+        <h4>Portal</h4>
+        <a href="#portal-overview">Portal overview</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#webcam">Live webcam</a>
+        <a href="#realtime">Realtime status</a>
+        <a href="#carelog">Care log</a>
+        <a href="#harvest">Planting & harvest</a>
+        <a href="#portal-safety">Quality & food safety</a>
+        <a href="#album">Album / timelapse</a>
+        <a href="#control">Điều khiển vườn</a>
+        <a href="#ai">AI gardener</a>
+        <a href="#billing">Billing / profile</a>
+      </div>
+      <div class="navgroup">
+        <h4>Build notes</h4>
+        <a href="#mapping">WP / Woo / Plugin mapping</a>
+        <a href="#priority">Build priority</a>
+      </div>
+    </aside>
+    <main class="content">
+      <div class="topnote"><strong>Mục đích file này:</strong> cho anh xem trực tiếp bằng HTML toàn bộ hướng giao diện theo Mẫu 1, thay cho file markdown. Đây là bản review để chốt UI trước khi sang DB/schema.</div>
+
+      <section class="section" id="big-idea">
+        <div class="card">
+          <div class="eyebrow">Big idea</div>
+          <h2>Một khu vườn riêng của gia đình, luôn ở trong tầm mắt và trong tầm kiểm soát.</h2>
+          <div class="grid-3">
+            <div class="mini"><strong>Đây là vườn của tôi</strong><p class="muted">Ngôn ngữ, hình ảnh và luồng UX luôn ưu tiên cảm giác sở hữu.</p></div>
+            <div class="mini"><strong>Tôi nhìn thấy được</strong><p class="muted">Webcam 24/7, dashboard, nhật ký và timelapse là bằng chứng trực tiếp.</p></div>
+            <div class="mini"><strong>Tôi yên tâm cho gia đình dùng</strong><p class="muted">An toàn thực phẩm phải được chứng minh bằng dữ liệu và lịch sử can thiệp.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="design-system">
+        <div class="card">
+          <div class="eyebrow">Design system</div>
+          <h2>Nền thẩm mỹ của Mẫu 1</h2>
+          <div class="grid-4">
+            <div class="mini"><strong>Forest Green</strong><p><code>#1F6B45</code></p></div>
+            <div class="mini"><strong>Fresh Green</strong><p><code>#7BC47F</code></p></div>
+            <div class="mini"><strong>Cream</strong><p><code>#F7F4EC</code></p></div>
+            <div class="mini"><strong>Soft Gold</strong><p><code>#C8A96B</code></p></div>
+          </div>
+          <div class="grid-3" style="margin-top:18px">
+            <div class="mini"><strong>Typography</strong><ul><li>Heading: Be Vietnam Pro</li><li>Body: Inter</li><li>Nhịp chữ sáng, dễ đọc</li></ul></div>
+            <div class="mini"><strong>Components</strong><ul><li>Card bo góc 20–24px</li><li>Button tròn mềm</li><li>Badge trạng thái rõ</li></ul></div>
+            <div class="mini"><strong>Visual language</strong><ul><li>Ảnh thật, nhiều ánh sáng</li><li>Portal mockup sạch</li><li>Camera không lạnh như CCTV</li></ul></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="homepage">
+        <div class="card">
+          <div class="eyebrow">Public website</div>
+          <h2>Homepage — Trang chủ chốt narrative</h2>
+          <div class="hero-preview">
+            <div class="hero-grid">
+              <div>
+                <div class="eyebrow">Vườn thuê số hóa cho gia đình hiện đại</div>
+                <h1 class="headline">Sở hữu một khu vườn sạch của riêng gia đình — luôn ở trong tầm mắt, 24/7</h1>
+                <p class="sub">Theo dõi bằng webcam, xem dữ liệu chất lượng rõ ràng và an tâm hơn về thực phẩm mỗi ngày.</p>
+                <div class="cta-row">
+                  <a class="btn primary" href="#">Chọn gói phù hợp</a>
+                  <a class="btn secondary" href="#">Xem demo vườn realtime</a>
+                </div>
+                <div class="chips">
+                  <div class="chip">Webcam 24/7</div>
+                  <div class="chip">Nhật ký chăm sóc minh bạch</div>
+                  <div class="chip">Theo dõi chất lượng theo lô</div>
+                </div>
+              </div>
+              <div class="mock">
+                <div class="cam"></div>
+                <div class="floating">
+                  <div class="mini"><strong>26°C</strong><div class="muted">Nhiệt độ hôm nay</div></div>
+                  <div class="mini"><strong>Ổn định</strong><div class="muted">AI nhận định</div></div>
+                  <div class="mini"><strong>+6 ngày</strong><div class="muted">Tới thu hoạch</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-3" style="margin-top:18px">
+            <div class="mini"><strong>3 giá trị cốt lõi</strong><ul><li>Nhìn thấy vườn 24/7</li><li>Theo dõi rõ chất lượng</li><li>Cảm giác đây là vườn của mình</li></ul></div>
+            <div class="mini"><strong>How it works</strong><ul><li>Chọn gói</li><li>Kích hoạt vườn số</li><li>Theo dõi qua portal</li><li>Thu hoạch & mùa vụ mới</li></ul></div>
+            <div class="mini"><strong>Trust sections</strong><ul><li>Evidence cards</li><li>Pricing nổi bật</li><li>Review + FAQ + Final CTA</li></ul></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="how-it-works">
+        <div class="card">
+          <h2>Cách hoạt động</h2>
+          <div class="grid-2">
+            <div class="mini"><strong>5 bước lớn</strong><ul><li>Chọn gói</li><li>Kích hoạt vườn tiêu chuẩn</li><li>Nhận tài khoản portal</li><li>Theo dõi / AI / webcam</li><li>Thu hoạch & tiếp tục mùa vụ</li></ul></div>
+            <div class="mini"><strong>Nguyên tắc UX</strong><ul><li>Giải thích rất dễ hiểu</li><li>Tách rõ hệ thống lo gì / khách kiểm soát gì</li><li>Có infographic vườn vật lý ↔ portal số ↔ gia đình</li></ul></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="plans">
+        <div class="card">
+          <h2>Trang Gói vườn</h2>
+          <div class="grid-3">
+            <div class="mini pricing"><strong>Mini</strong><p class="muted">Cho 1–2 người. Webcam cơ bản, dashboard cơ bản, AI summary định kỳ.</p></div>
+            <div class="mini pricing featured"><strong>Family</strong> <span class="tag ok">Phổ biến nhất</span><p class="muted">Cho 3–4 người. Nhật ký đầy đủ, dữ liệu rõ hơn, chia sẻ cho người thân.</p></div>
+            <div class="mini pricing"><strong>Premium</strong><p class="muted">Trải nghiệm sở hữu mạnh nhất. Timelapse, AI sâu hơn, hỗ trợ ưu tiên.</p></div>
+          </div>
+          <div class="grid-2" style="margin-top:18px">
+            <div class="mini"><strong>Phần phải có</strong><ul><li>Bộ lọc nhanh theo quy mô gia đình</li><li>Bảng so sánh chi tiết</li><li>Add-ons</li><li>FAQ giá & nâng cấp</li></ul></div>
+            <div class="mini"><strong>Lưu ý</strong><p class="muted">Trải nghiệm nhận được phải nổi hơn giá. Giá không phải yếu tố lớn nhất trên UI.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="digital">
+        <div class="card">
+          <h2>Trang Trải nghiệm số & webcam 24/7</h2>
+          <div class="grid-3">
+            <div class="mini"><strong>Hero focus</strong><p class="muted">Webcam live UI lớn + cảm giác theo dõi thật.</p></div>
+            <div class="mini"><strong>Tính năng nổi bật</strong><ul><li>Live webcam</li><li>Snapshot</li><li>Timelapse</li><li>Dashboard cảm biến</li><li>AI summary</li></ul></div>
+            <div class="mini"><strong>Mục tiêu</strong><p class="muted">Bán USP số hóa mà vẫn giữ được sự ấm áp của Mẫu 1.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="safety">
+        <div class="card">
+          <h2>Trang Chất lượng & an toàn thực phẩm</h2>
+          <div class="grid-4">
+            <div class="mini">Quy trình chuẩn hóa</div>
+            <div class="mini">Dữ liệu môi trường</div>
+            <div class="mini">Nhật ký chăm sóc</div>
+            <div class="mini">Truy xuất đợt thu hoạch</div>
+          </div>
+          <div class="grid-2" style="margin-top:18px">
+            <div class="mini"><strong>Thông điệp</strong><h3 style="margin-top:8px">Sạch phải nhìn thấy được</h3><p class="muted">Tone trust mạnh, giống một hồ sơ minh bạch chứ không chỉ là lời hứa marketing.</p></div>
+            <div class="mini"><strong>UI note</strong><ul><li>Evidence cards</li><li>Mẫu nhật ký thật</li><li>AI giải thích chỉ số</li><li>Mẫu truy xuất theo lô</li></ul></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="story">
+        <div class="card">
+          <h2>Trang Câu chuyện “Vườn của bạn”</h2>
+          <div class="grid-3">
+            <div class="mini"><strong>Use case 1</strong><p class="muted">Gia đình có con nhỏ muốn an tâm hơn về thực phẩm.</p></div>
+            <div class="mini"><strong>Use case 2</strong><p class="muted">Người thành thị muốn kết nối với việc trồng trọt nhưng không có thời gian.</p></div>
+            <div class="mini"><strong>Use case 3</strong><p class="muted">Món quà ý nghĩa cho bố mẹ / người thân.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="card">
+          <h2>FAQ / Review / Blog / Liên hệ</h2>
+          <div class="grid-2">
+            <div class="mini"><strong>FAQ</strong><ul><li>Tôi sẽ xem được những gì?</li><li>Gia đình có cùng theo dõi không?</li><li>Nếu camera gián đoạn thì sao?</li><li>Rau được quản lý ra sao?</li></ul></div>
+            <div class="mini"><strong>Review + Blog</strong><ul><li>Review người thật, ảnh thật</li><li>Nhật ký 7 ngày đầu</li><li>Blog SEO: rau sạch, đọc chỉ số, hành trình số hóa</li></ul></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="signup">
+        <div class="card">
+          <h2>Đăng ký / Onboarding / Thank you</h2>
+          <div class="grid-3">
+            <div class="mini"><strong>Đăng ký</strong><ul><li>Họ tên</li><li>SĐT</li><li>Khu vực</li><li>Quy mô gia đình</li><li>Mục tiêu chính</li></ul></div>
+            <div class="mini"><strong>Onboarding</strong><ul><li>Thông tin gia đình</li><li>Mục tiêu sử dụng</li><li>Mức độ quan tâm theo dõi số</li><li>Chia sẻ cho người thân</li></ul></div>
+            <div class="mini"><strong>Thank you</strong><p class="muted">Giữ đà cảm xúc sau chuyển đổi, có timeline nhỏ “tiếp theo sẽ là gì”.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="portal-overview">
+        <div class="card">
+          <div class="eyebrow">Customer portal</div>
+          <h2>Portal phải là “không gian sở hữu số” của khách</h2>
+          <p class="muted">Portal không được trông như khu quản trị kỹ thuật. Mở vào là thấy vườn, thấy tình trạng hôm nay, thấy lịch sử chăm sóc, thấy an toàn thực phẩm được ghi nhận rõ ràng.</p>
+        </div>
+      </section>
+
+      <section class="section" id="dashboard">
+        <div class="card">
+          <h2>Portal Dashboard — Tổng quan vườn của tôi</h2>
+          <div class="portal-preview">
+            <div class="portal-shell">
+              <div class="portal-side">
+                <strong>Vườn Nhà Tùng</strong>
+                <ul>
+                  <li>Tổng quan</li>
+                  <li>Live webcam</li>
+                  <li>Realtime status</li>
+                  <li>Nhật ký chăm sóc</li>
+                  <li>Chất lượng & an toàn</li>
+                  <li>AI gardener</li>
+                </ul>
+              </div>
+              <div class="portal-main">
+                <div class="statusbar">
+                  <div class="mini"><strong>Ổn định</strong><div class="small">Garden health</div></div>
+                  <div class="mini"><strong>Online</strong><div class="small">Camera status</div></div>
+                  <div class="mini"><strong>+6 ngày</strong><div class="small">Harvest countdown</div></div>
+                  <div class="mini"><strong>08:12</strong><div class="small">Cập nhật gần nhất</div></div>
+                </div>
+                <div class="dashboard-grid">
+                  <div class="widget">
+                    <div class="live-thumb"></div>
+                    <div style="margin-top:12px"><span class="tag ok">Webcam đang hoạt động</span></div>
+                  </div>
+                  <div class="widget">
+                    <strong>AI summary</strong>
+                    <p class="muted">Hôm nay vườn của gia đình đang phát triển tốt. Xà lách lô 02 còn khoảng 6 ngày tới thu hoạch.</p>
+                    <div class="timeline">
+                      <div class="item">08:10 — Hệ thống cập nhật dữ liệu sáng</div>
+                      <div class="item">07:40 — Ghi nhận môi trường ổn định</div>
+                      <div class="item">06:30 — Không có cảnh báo mới</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2" style="margin-top:18px">
+            <div class="mini"><strong>Widget priority</strong><ul><li>Live preview</li><li>Summary hôm nay</li><li>Harvest countdown</li><li>Latest care log</li><li>Alerts</li></ul></div>
+            <div class="mini"><strong>Mục tiêu 10 giây</strong><p class="muted">Phải trả lời được: vườn hôm nay ổn không, có gì mới, còn bao lâu thu hoạch, camera có hoạt động không.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="webcam">
+        <div class="card">
+          <h2>Live webcam 24/7</h2>
+          <div class="grid-2">
+            <div class="widget"><div class="live-thumb" style="height:300px"></div></div>
+            <div class="mini"><strong>Thành phần chính</strong><ul><li>Webcam live lớn</li><li>Full screen</li><li>Snapshot timeline</li><li>Camera status panel</li><li>Shortcut sang timelapse</li></ul></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="realtime">
+        <div class="card">
+          <h2>Tình trạng vườn realtime</h2>
+          <div class="grid-4">
+            <div class="mini"><strong>26°C</strong><div class="muted">Nhiệt độ</div></div>
+            <div class="mini"><strong>67%</strong><div class="muted">Độ ẩm</div></div>
+            <div class="mini"><strong>Ổn</strong><div class="muted">Ánh sáng</div></div>
+            <div class="mini"><strong>Chuẩn</strong><div class="muted">EC / pH</div></div>
+          </div>
+          <div class="grid-2" style="margin-top:18px">
+            <div class="mini"><strong>Nguyên tắc UX</strong><ul><li>Mỗi chỉ số có lời giải thích ngắn</li><li>Tránh chart quá phức tạp</li><li>AI diễn giải “mức này có ý nghĩa gì”</li></ul></div>
+            <div class="mini"><strong>Mục tiêu</strong><p class="muted">Biến dữ liệu thành thứ gia đình hiểu được, chứ không phải màn hình kỹ thuật.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="carelog">
+        <div class="card">
+          <h2>Nhật ký chăm sóc & can thiệp</h2>
+          <div class="timeline">
+            <div class="item"><strong>08:10</strong> — Hệ thống cập nhật dữ liệu sáng</div>
+            <div class="item"><strong>07:30</strong> — Kiểm tra định kỳ môi trường</div>
+            <div class="item"><strong>Hôm qua</strong> — Ghi nhận đợt chăm sóc gần nhất</div>
+          </div>
+          <div class="grid-2" style="margin-top:18px">
+            <div class="mini"><strong>Thành phần</strong><ul><li>Timeline theo ngày</li><li>Filter theo loại sự kiện</li><li>Ảnh nếu có</li><li>AI digest theo tuần</li></ul></div>
+            <div class="mini"><strong>Mục tiêu</strong><p class="muted">Khách nhìn thấy minh bạch vận hành thật, không phải lời hứa.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="harvest">
+        <div class="card">
+          <h2>Lịch gieo trồng & thu hoạch</h2>
+          <div class="grid-3">
+            <div class="mini"><strong>Current season</strong><p class="muted">Progress bar + số ngày hiện tại</p></div>
+            <div class="mini"><strong>Upcoming milestones</strong><p class="muted">Các mốc sắp tới: phát triển, thu hoạch, mùa vụ mới</p></div>
+            <div class="mini"><strong>History</strong><p class="muted">Mùa vụ trước nếu có</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="portal-safety">
+        <div class="card">
+          <h2>Chất lượng & an toàn thực phẩm trong portal</h2>
+          <div class="grid-4">
+            <div class="mini">Điều kiện môi trường</div>
+            <div class="mini">Nhật ký chăm sóc</div>
+            <div class="mini">Đợt thu hoạch</div>
+            <div class="mini">Truy xuất / xác nhận</div>
+          </div>
+          <div class="grid-2" style="margin-top:18px">
+            <div class="mini"><strong>Trust summary hero</strong><p class="muted">Một màn hình tổng hợp để khách thấy ngay đợt hiện tại đang ở trạng thái nào.</p></div>
+            <div class="mini"><strong>AI block</strong><p class="muted">Giải thích vì sao đợt này đạt trạng thái tốt và có điểm gì cần chú ý nếu có.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="album">
+        <div class="card">
+          <h2>Album tăng trưởng / timelapse</h2>
+          <div class="grid-3">
+            <div class="mini"><strong>Hero collage</strong><p class="muted">Ảnh tăng trưởng theo thời gian.</p></div>
+            <div class="mini"><strong>Tabs</strong><p class="muted">Ảnh theo mốc / timelapse / cột mốc mùa vụ.</p></div>
+            <div class="mini"><strong>Giá trị</strong><p class="muted">Tăng gắn bó cảm xúc và khả năng chia sẻ cho gia đình.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="control">
+        <div class="card">
+          <h2>Điều khiển vườn</h2>
+          <div class="grid-2">
+            <div class="mini"><strong>Hiển thị trung thực</strong><ul><li>Chỉ mở quyền điều khiển thật sự có</li><li>Nếu phase 1 chưa đủ, dùng wording “gửi yêu cầu điều chỉnh”</li><li>Có safety notes rõ</li></ul></div>
+            <div class="mini"><strong>Module có thể có</strong><ul><li>Tưới</li><li>Ánh sáng</li><li>Chế độ chăm sóc</li><li>Lịch tự động</li></ul></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="ai">
+        <div class="card">
+          <h2>AI gardener</h2>
+          <div class="grid-3">
+            <div class="mini"><strong>Prompt gợi ý</strong><ul><li>Hôm nay vườn tôi thế nào?</li><li>Bao lâu nữa thu hoạch?</li><li>Chỉ số nào cần chú ý?</li></ul></div>
+            <div class="mini"><strong>Vai trò</strong><p class="muted">Người trợ lý chăm vườn dễ hiểu, không phải kỹ sư dữ liệu.</p></div>
+            <div class="mini"><strong>Kết quả</strong><p class="muted">Tóm tắt + giải thích + khuyến nghị + deep-link sang dữ liệu gốc.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="billing">
+        <div class="card">
+          <h2>Billing / profile / sharing</h2>
+          <div class="grid-3">
+            <div class="mini"><strong>Gói dịch vụ</strong><p class="muted">Current plan, quyền lợi, add-ons, nâng cấp.</p></div>
+            <div class="mini"><strong>Thanh toán</strong><p class="muted">Hóa đơn, phương thức thanh toán, lịch sử giao dịch.</p></div>
+            <div class="mini"><strong>Gia đình & chia sẻ</strong><p class="muted">Mời người thân xem camera, xem nhật ký, nhận thông báo.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="mapping">
+        <div class="card">
+          <h2>WP / Woo / custom plugin mapping</h2>
+          <div class="grid-3">
+            <div class="mini"><strong>WordPress + Blocksy</strong><ul><li>Trang chủ</li><li>Gói vườn</li><li>Trải nghiệm số</li><li>An toàn thực phẩm</li><li>FAQ / Review / Blog</li></ul></div>
+            <div class="mini"><strong>WooCommerce</strong><ul><li>Catalog gói</li><li>Add-ons</li><li>Checkout</li><li>Đơn / thanh toán cơ bản</li></ul></div>
+            <div class="mini"><strong>Custom portal plugin</strong><ul><li>Dashboard</li><li>Webcam / timelapse</li><li>Sensor UI</li><li>AI gardener</li><li>Family sharing</li></ul></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="priority">
+        <div class="footerbox">
+          <h2 style="margin-top:0;color:#fff">Build priority đề xuất</h2>
+          <div class="grid-3">
+            <div class="mini" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15);color:#fff"><strong>Phase A</strong><ul><li>Design system</li><li>Homepage</li><li>Gói vườn</li><li>Cách hoạt động</li><li>Trải nghiệm số</li><li>An toàn thực phẩm</li></ul></div>
+            <div class="mini" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15);color:#fff"><strong>Phase B</strong><ul><li>Dashboard</li><li>Live webcam</li><li>Realtime status</li><li>Care log</li><li>Harvest timeline</li><li>AI gardener</li></ul></div>
+            <div class="mini" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15);color:#fff"><strong>Phase C</strong><ul><li>Album / timelapse</li><li>Billing</li><li>Support</li><li>Devices</li><li>Family profile</li><li>Sharing</li></ul></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
