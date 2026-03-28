@@ -8,10 +8,9 @@ if (mobileToggle && mobilePanel) {
       <div class="mobile-panel-inner">
         <a href="${prefix}index.html">Trang chủ</a>
         <a href="${prefix}how-it-works.html">Cách hoạt động</a>
-        <a href="${prefix}packages.html">Gói vườn</a>
-        <a href="${prefix}digital-experience.html">Trải nghiệm số</a>
+        <a href="${prefix}packages.html">Chợ quê</a>
         <a href="${prefix}food-safety.html">An toàn thực phẩm</a>
-        <a href="${prefix}your-garden-story.html">Câu chuyện vườn</a>
+        <a href="${prefix}your-garden-story.html">Chuyện nhà nông</a>
         <a href="${prefix}faq.html">FAQ</a>
       </div>`;
     mobilePanel.dataset.initialized = 'true';
