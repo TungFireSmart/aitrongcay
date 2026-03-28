@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vườn Riêng Trong Tầm Tay — Prototype hoàn chỉnh</title>
-  <meta name="description" content="Prototype website cho dự án vườn thuê số hóa - Vườn Riêng Trong Tầm Tay.">
+  <title>Vườn Riêng Trong Tầm Tay — Prototype polished</title>
+  <meta name="description" content="Prototype website polished cho mô hình vườn thuê số hóa - Vườn Riêng Trong Tầm Tay.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,59 +13,48 @@
 <body>
 <header class="site-header">
   <div class="container nav-row">
-    <a class="logo" href="index.html">
-      <span class="logo-badge">🌿</span>
-      <span>Vườn Trong Tầm Tay</span>
-    </a>
+    <a class="logo" href="index.html"><span class="logo-badge">🌿</span><span>Vườn Trong Tầm Tay</span></a>
     <nav class="nav-menu">
-      <a href="how-it-works.html">Cách hoạt động</a>
-      <a href="packages.html">Gói vườn</a>
-      <a href="digital-experience.html">Trải nghiệm số</a>
-      <a href="food-safety.html">An toàn thực phẩm</a>
-      <a href="your-garden-story.html">Câu chuyện vườn của bạn</a>
-      <a href="faq.html">FAQ</a>
+      <a href="how-it-works.html">Cách hoạt động</a><a href="packages.html">Gói vườn</a><a href="digital-experience.html">Trải nghiệm số</a><a href="food-safety.html">An toàn thực phẩm</a><a href="your-garden-story.html">Câu chuyện vườn</a><a href="faq.html">FAQ</a>
     </nav>
-    <div class="nav-actions">
-      <a class="btn btn-secondary" href="signup/register.html">Đăng ký tư vấn</a>
-      <a class="btn btn-primary" href="packages.html">Xem gói vườn</a>
-      <a class="small" href="auth/login.html">Đăng nhập</a>
-    </div>
+    <div class="nav-actions"><a class="btn btn-secondary" href="signup/register.html">Đăng ký tư vấn</a><a class="btn btn-primary" href="portal/dashboard.html">Xem portal demo</a><a class="small-link" href="auth/login.html">Đăng nhập</a></div>
     <button class="btn btn-secondary menu-toggle" data-mobile-toggle>Menu</button>
   </div>
   <div class="container" data-mobile-panel style="display:none"></div>
 </header>
-
 <main>
-  <section class="section">
+  <section class="section-hero">
     <div class="container hero-grid">
       <div class="hero-card hero-shell">
-        <span class="eyebrow">Vườn thuê số hóa cho gia đình hiện đại</span>
-        <h1>Sở hữu một khu vườn sạch của riêng gia đình — luôn ở trong tầm mắt, 24/7</h1>
-        <p>Không chỉ nhận rau sạch. Anh/chị theo dõi webcam live, xem nhật ký chăm sóc, nắm tình trạng môi trường và cảm nhận khu vườn này thật sự thuộc về gia đình mình.</p>
-        <div class="inline-list" style="margin:22px 0 18px">
-          <a class="btn btn-primary" href="packages.html">Chọn gói phù hợp</a>
-          <a class="btn btn-secondary" href="portal/dashboard.html">Xem demo vườn realtime</a>
-        </div>
-        <div class="chips">
-          <span class="chip">Webcam 24/7</span>
-          <span class="chip">Nhật ký chăm sóc minh bạch</span>
-          <span class="chip">Theo dõi chất lượng theo lô</span>
+        <span class="eyebrow">Mẫu 1 • Vườn riêng trong tầm tay</span>
+        <h1>Sở hữu một khu vườn sạch của riêng gia đình — nhìn thấy được, cảm được, theo dõi được mỗi ngày</h1>
+        <p class="lead">Đây không chỉ là dịch vụ giao rau. Đó là một khu vườn số có camera, nhật ký chăm sóc, chỉ số môi trường và câu chuyện tăng trưởng mà anh/chị thật sự muốn mở ra mỗi tối.</p>
+        <div class="inline-list" style="margin:24px 0 18px"><a class="btn btn-primary" href="packages.html">Khám phá gói vườn</a><a class="btn btn-secondary" href="digital-experience.html">Xem trải nghiệm số</a></div>
+        <div class="value-strip">
+          <div class="metric"><span class="subtle">Khách hàng demo</span><strong>128</strong><span class="trend">+18 gia đình đang chờ kích hoạt</span></div>
+          <div class="metric"><span class="subtle">Camera uptime</span><strong>99.8%</strong><span class="trend">Live 24/7 có lịch sử</span></div>
+          <div class="metric"><span class="subtle">Care log</span><strong>12–18</strong><span class="trend">bản ghi / chu kỳ</span></div>
+          <div class="metric"><span class="subtle">Cảm giác sở hữu</span><strong>Rất cao</strong><span class="trend">khác hẳn mua rau định kỳ</span></div>
         </div>
       </div>
       <div class="hero-card hero-visual">
-        <div class="hero-screen">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px"><span class="live-badge"><span class="dot"></span> LIVE • Garden A12</span><span class="label">Cập nhật lúc <span data-now></span></span></div>
-          <div class="camera-view" style="min-height:240px;margin-bottom:18px">
-            <div class="camera-overlay">
-              <div class="chips"><span class="label">Cam nhà lưới 01</span><span class="label">Timelapse khả dụng</span></div>
-              <div><strong style="font-size:1.4rem">Rau ăn lá đang phát triển ổn định</strong><p class="small">AI nhận định: độ ẩm đúng ngưỡng, lá non đồng đều, ETA thu hoạch 6 ngày.</p></div>
+        <div class="device-stack">
+          <div class="hero-screen device-tablet">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px"><span class="live-badge"><span class="dot"></span> LIVE • Garden A12</span><span class="label">Cập nhật lúc <span data-now></span></span></div>
+            <div class="camera-view" style="min-height:250px;margin-bottom:18px">
+              <div class="camera-overlay">
+                <div class="chips"><span class="label">Cam nhà lưới 01</span><span class="label">Timelapse sẵn sàng</span></div>
+                <div><strong style="font-size:1.45rem">Rau ăn lá đang phát triển ổn định</strong><p class="small">AI nhận định: độ ẩm đúng ngưỡng, lá non đồng đều, ETA thu hoạch 6 ngày.</p></div>
+              </div>
             </div>
+            <div class="stats-grid">
+              <div class="metric"><span class="subtle">Nhiệt độ</span><strong>24.8°C</strong></div>
+              <div class="metric"><span class="subtle">Độ ẩm</span><strong>71%</strong></div>
+              <div class="metric"><span class="subtle">Health score</span><strong>92/100</strong></div>
+            </div>
+            <div class="hero-floating-card"><div class="kicker">AI summary</div><p style="margin:0">Hôm nay vườn <span data-rotating-text="ổn định|tăng trưởng đều|ít rủi ro|đẹp để chụp snapshot"></span>.</p></div>
           </div>
-          <div class="stats-grid">
-            <div class="metric"><span class="subtle">Nhiệt độ</span><strong>24.8°C</strong></div>
-            <div class="metric"><span class="subtle">Độ ẩm</span><strong>71%</strong></div>
-            <div class="metric"><span class="subtle">Thu hoạch</span><strong>+6 ngày</strong></div>
-          </div>
+          <div class="device-phone"><div class="camera-view" style="min-height:340px"><div class="camera-overlay"><div class="label">App view</div><div><h3 style="margin-bottom:8px">Nhà Mây</h3><p class="small">Bé Bin đã xem timelapse tuần này.</p></div></div></div></div>
         </div>
       </div>
     </div>
@@ -73,26 +62,40 @@
 
   <section class="section alt">
     <div class="container">
-      <div class="section-head center" style="margin-inline:auto">
-        <span class="eyebrow">3 giá trị cốt lõi</span>
-        <h2>Một mô hình mới, nhưng cảm giác rất dễ hiểu</h2>
-      </div>
-      <div class="cards-3">
-        <div class="card"><div class="feature-icon">📹</div><h3>Nhìn thấy vườn 24/7</h3><p>Camera live, snapshot theo mốc giờ và album tăng trưởng giúp anh/chị không còn “mua bằng niềm tin mơ hồ”.</p></div>
-        <div class="card"><div class="feature-icon">🛡️</div><h3>Theo dõi chất lượng rõ ràng</h3><p>Dữ liệu cảm biến, care log và truy xuất lô giúp an toàn thực phẩm được chứng minh bằng bằng chứng.</p></div>
-        <div class="card"><div class="feature-icon">🏡</div><h3>Cảm giác đây là vườn của chính mình</h3><p>Mỗi tài khoản mở ra là một không gian sở hữu số: có tên vườn, tiến độ, mùa vụ và câu chuyện của gia đình.</p></div>
+      <div class="section-head center" style="margin-inline:auto"><span class="eyebrow">Vì sao mô hình này khác</span><h2>Một mô hình mới, nhưng khách hàng hiểu rất nhanh vì cảm giác quá thật</h2></div>
+      <div class="cards-4">
+        <div class="card"><div class="feature-icon">📹</div><h3>Nhìn thấy vườn 24/7</h3><p>Camera live, snapshot theo mốc giờ và timelapse khiến khu vườn hiện diện như một phần đời sống gia đình.</p></div>
+        <div class="card"><div class="feature-icon">🧠</div><h3>AI diễn giải dễ hiểu</h3><p>Dữ liệu không còn lạnh lẽo. Hệ thống giải thích bằng ngôn ngữ đời thường: hôm nay vườn khỏe, cần chú ý gì, bao lâu nữa thu hoạch.</p></div>
+        <div class="card"><div class="feature-icon">🛡️</div><h3>An toàn có bằng chứng</h3><p>Quy trình, sensor, care log và truy xuất lô được xếp thành một chuỗi niềm tin dễ kiểm tra.</p></div>
+        <div class="card"><div class="feature-icon">🏡</div><h3>Cảm giác sở hữu số</h3><p>Mỗi gia đình có tên vườn, nhịp mùa vụ, album tăng trưởng và cổng riêng để quay lại mỗi ngày.</p></div>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
-      <div class="section-head"><span class="eyebrow">How it works</span><h2>Bắt đầu rất nhẹ, gắn bó rất lâu</h2></div>
-      <div class="steps-grid">
-        <div class="card"><div class="kicker">Bước 1</div><h3>Chọn gói vườn</h3><p>Mini, Family hoặc Premium tùy quy mô gia đình và mức trải nghiệm số mong muốn.</p></div>
-        <div class="card"><div class="kicker">Bước 2</div><h3>Kích hoạt khu vườn số</h3><p>Hệ thống chuẩn hóa khu vườn, gắn camera/cảm biến và mở portal riêng cho anh/chị.</p></div>
-        <div class="card"><div class="kicker">Bước 3</div><h3>Theo dõi qua portal</h3><p>Xem webcam, chỉ số realtime, nhật ký chăm sóc và hỏi AI gardener bất kỳ lúc nào.</p></div>
-        <div class="card"><div class="kicker">Bước 4</div><h3>Thu hoạch & tiếp tục mùa vụ</h3><p>Nhận lịch thu hoạch, xem lô chất lượng và tái gieo trồng để vườn luôn có câu chuyện mới.</p></div>
+    <div class="container split-card">
+      <div class="glass-card">
+        <span class="eyebrow">Hành trình khách hàng</span>
+        <h2>Từ lúc đăng ký đến khi thấy rau lớn lên — hành trình rõ ràng, có cảm xúc</h2>
+        <div class="timeline timeline-compact">
+          <div class="timeline-item"><div class="time-pill">Ngày 1</div><div><h3>Chọn gói và đặt tên vườn</h3><p>Khách thấy mình đang bắt đầu một “không gian riêng”, chứ không chỉ mua suất rau.</p></div></div>
+          <div class="timeline-item"><div class="time-pill">Ngày 3</div><div><h3>Nhận live cam đầu tiên</h3><p>Cảm giác wow đến từ việc mở portal và nhìn thấy khu vườn thật sự có mặt ở đó.</p></div></div>
+          <div class="timeline-item"><div class="time-pill">Tuần 2</div><div><h3>Đọc care log và AI summary</h3><p>Niềm tin tăng mạnh khi khách hiểu vì sao vườn đang tốt và ai đã chăm sóc nó.</p></div></div>
+          <div class="timeline-item"><div class="time-pill">Thu hoạch</div><div><h3>Nhận lô đầu tiên cùng hồ sơ chất lượng</h3><p>Kết quả là rau sạch, nhưng thứ giữ chân khách là hành trình đồng hành.</p></div></div>
+        </div>
+      </div>
+      <div class="glass-card">
+        <div class="kicker">Tăng độ thuyết phục</div>
+        <h3>Những gì khách “cảm” được ngay trên homepage</h3>
+        <ul class="check-list">
+          <li>Portal không còn là admin panel khô cứng mà giống một sản phẩm lifestyle-tech.</li>
+          <li>Câu chuyện sở hữu được kể bằng milestone, timelapse, family sharing và CTA rất rõ.</li>
+          <li>Niềm tin chất lượng được neo bằng nhiều lớp bằng chứng thay vì lời hứa chung chung.</li>
+          <li>Mỗi section đều gợi được lý do để khách bấm tiếp qua package, demo portal hoặc FAQ.</li>
+        </ul>
+        <div class="line-chart" style="margin-top:22px">
+          <svg viewBox="0 0 600 210" preserveAspectRatio="none"><path d="M0 176 C80 170, 110 150, 170 148 S280 124, 340 118 S450 72, 600 40" fill="none" stroke="#1f6b45" stroke-width="5"/><path d="M0 176 C80 170, 110 150, 170 148 S280 124, 340 118 S450 72, 600 40 L600 210 L0 210 Z" fill="rgba(123,196,127,.18)"/></svg>
+        </div>
       </div>
     </div>
   </section>
@@ -100,21 +103,24 @@
   <section class="section dark-band">
     <div class="container grid-2">
       <div>
-        <span class="eyebrow" style="background:rgba(255,255,255,.12);color:white">Vườn của bạn trên màn hình</span>
-        <h2>Không chỉ mua kết quả — anh/chị đang đồng hành cùng quá trình lớn lên của rau</h2>
-        <p>Mỗi lần mở portal là một thói quen nhỏ: xem camera, đọc AI summary, nhìn cây lớn hơn hôm qua một chút. Đó là khác biệt giữa “dịch vụ giao rau” và “một khu vườn của gia đình”.</p>
-        <div class="timeline">
-          <div class="timeline-item"><div class="time-pill">07:15</div><div><h3>Webcam sáng sớm</h3><p>Thấy lớp sương nhẹ trong nhà lưới, hệ thống xác nhận môi trường ổn định.</p></div></div>
-          <div class="timeline-item"><div class="time-pill">12:10</div><div><h3>Realtime status</h3><p>Nhiệt độ tăng nhẹ, AI gợi ý điều chỉnh thông gió ở mức an toàn.</p></div></div>
-          <div class="timeline-item"><div class="time-pill">20:30</div><div><h3>Care log cuối ngày</h3><p>Xem kỹ thuật viên bổ sung dinh dưỡng, kèm ảnh minh chứng và mã lô can thiệp.</p></div></div>
+        <span class="eyebrow" style="background:rgba(255,255,255,.12);color:white">Một portal đáng để mở mỗi ngày</span>
+        <h2>Không chỉ nhận rau — anh/chị đang theo dõi cả một quá trình lớn lên rất sống động</h2>
+        <p>Về bản chất, đây là sản phẩm kết hợp nông nghiệp + camera + dashboard + storytelling. Giá trị đến từ việc khách mở portal và thấy “vườn của mình” đang tiếp diễn.</p>
+        <div class="tabs" data-tabs>
+          <button class="tab-button active" data-tab-button="cam">Live cam</button>
+          <button class="tab-button" data-tab-button="log">Care log</button>
+          <button class="tab-button" data-tab-button="quality">Quality</button>
         </div>
+        <div data-tab-panel="cam" class="tab-panel active"><p>Cam live giúp khách thấy ánh sáng sáng sớm, lá non, sự thay đổi từng ngày và cảm nhận sự hiện diện của khu vườn.</p></div>
+        <div data-tab-panel="log" class="tab-panel"><p>Care log có người thực hiện, giờ thực hiện, checklist, ảnh minh chứng và note để giải thích mọi can thiệp quan trọng.</p></div>
+        <div data-tab-panel="quality" class="tab-panel"><p>Hồ sơ chất lượng theo lô giúp khách yên tâm khi đưa rau vào bữa ăn gia đình, đặc biệt với nhà có trẻ nhỏ hoặc người lớn tuổi.</p></div>
       </div>
       <div class="portal-card">
-        <div class="camera-view"><div class="camera-overlay"><div class="label">Garden Portal Preview</div><div><h3 style="font-size:1.8rem;margin:0 0 8px">A12 • Gia đình Minh Anh</h3><p>Health score 92/100 • 3 luống rau ăn lá • 1 mùa vụ đang chạy</p></div></div></div>
-        <div class="stats-grid" style="margin-top:18px">
-          <div class="metric"><span class="subtle">AI Summary</span><strong>Ổn định</strong></div>
+        <div class="camera-view"><div class="camera-overlay"><div class="chips"><span class="label">Garden Portal Preview</span><span class="label">Family plan</span></div><div><h3 style="font-size:1.9rem;margin:0 0 8px">A12 • Gia đình Minh Anh</h3><p>Health score 92/100 • 3 luống rau ăn lá • 1 mùa vụ đang chạy</p></div></div></div>
+        <div class="badge-grid" style="margin-top:18px">
+          <div class="metric"><span class="subtle">AI summary</span><strong>Ổn định</strong></div>
+          <div class="metric"><span class="subtle">Snapshot</span><strong>24 ảnh</strong></div>
           <div class="metric"><span class="subtle">Care log</span><strong>12 bản ghi</strong></div>
-          <div class="metric"><span class="subtle">Lô hiện tại</span><strong>LOT-0328</strong></div>
         </div>
       </div>
     </div>
@@ -122,82 +128,55 @@
 
   <section class="section alt">
     <div class="container">
-      <div class="section-head"><span class="eyebrow">An toàn thực phẩm nhìn thấy được</span><h2>4 lớp niềm tin để gia đình yên tâm dùng mỗi ngày</h2></div>
-      <div class="cards-4">
-        <div class="card"><div class="feature-icon">🧪</div><h3>Quy trình chuẩn hóa</h3><p>Nhà lưới, lịch vận hành và checklist chăm sóc được cố định theo tiêu chuẩn đã chốt.</p></div>
-        <div class="card"><div class="feature-icon">📈</div><h3>Dữ liệu cảm biến</h3><p>Nhiệt độ, độ ẩm, ánh sáng và trạng thái thiết bị được cập nhật để giải thích chất lượng bằng dữ liệu.</p></div>
-        <div class="card"><div class="feature-icon">📝</div><h3>Nhật ký chăm sóc</h3><p>Mọi can thiệp quan trọng đều có người thực hiện, thời gian, ghi chú và ảnh minh chứng.</p></div>
-        <div class="card"><div class="feature-icon">🏷️</div><h3>Truy xuất theo lô</h3><p>Mỗi đợt thu hoạch gắn mã lô, ngày cắt và hồ sơ chất lượng rõ ràng trong portal.</p></div>
+      <div class="section-head"><span class="eyebrow">3 gói dễ chọn</span><h2>Khởi đầu nhẹ cho người mới, đủ hấp dẫn cho gia đình muốn gắn bó lâu dài</h2></div>
+      <div class="pricing-grid">
+        <div class="pricing-card"><div class="kicker">Mini</div><h3>Từ 1.490.000đ/tháng</h3><p>Phù hợp người mới thử. Có dashboard cơ bản, cập nhật theo ngày và trải nghiệm đủ để hiểu mô hình.</p><ul class="bullet-list"><li>1 luống tiêu chuẩn</li><li>Camera chung theo khung giờ</li><li>AI summary mỗi ngày</li></ul><a class="btn btn-secondary" href="packages.html">Xem chi tiết</a></div>
+        <div class="pricing-card" style="border:2px solid var(--gold)"><div class="kicker">Family • phổ biến nhất</div><h3>Từ 2.990.000đ/tháng</h3><p>Điểm cân bằng tốt nhất giữa sản lượng, cảm giác sở hữu và trải nghiệm số.</p><ul class="bullet-list"><li>Camera riêng ưu tiên</li><li>Timelapse + care log đầy đủ</li><li>Mời người thân cùng xem</li></ul><a class="btn btn-primary" href="signup/register.html">Chọn gói này</a></div>
+        <div class="pricing-card"><div class="kicker">Premium</div><h3>Từ 5.490.000đ/tháng</h3><p>Dành cho gia đình thích trải nghiệm sâu, theo dõi kỹ hơn và muốn nhiều báo cáo chất lượng.</p><ul class="bullet-list"><li>Nhiều luống & mùa vụ</li><li>Báo cáo sensor nâng cao</li><li>Ưu tiên hỗ trợ và custom</li></ul><a class="btn btn-secondary" href="packages.html">Khám phá</a></div>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
-      <div class="section-head"><span class="eyebrow">Gói vườn nổi bật</span><h2>3 gói dễ chọn cho giai đoạn 1</h2></div>
-      <div class="pricing-grid">
-        <div class="pricing-card"><div class="kicker">Mini</div><h3>Từ 1.490.000đ/tháng</h3><p>Cho người bắt đầu hoặc căn hộ nhỏ. 1 camera chung, dashboard cơ bản, AI summary hằng ngày.</p><a class="btn btn-secondary" href="packages.html">Xem chi tiết</a></div>
-        <div class="pricing-card" style="border:2px solid var(--gold)"><div class="kicker">Family • Phổ biến nhất</div><h3>Từ 2.990.000đ/tháng</h3><p>Phù hợp gia đình 3–4 người. Camera riêng, lịch gieo trồng, timelapse, care log đầy đủ.</p><a class="btn btn-primary" href="signup/register.html">Đăng ký gói này</a></div>
-        <div class="pricing-card"><div class="kicker">Premium</div><h3>Từ 5.490.000đ/tháng</h3><p>Trải nghiệm cao nhất: nhiều luống, cảnh báo nâng cao, báo cáo chất lượng sâu và ưu tiên hỗ trợ.</p><a class="btn btn-secondary" href="packages.html">Khám phá</a></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="container story-grid">
-      <div class="card"><span class="eyebrow">Review thật</span><h2>“Nhà mình mở portal mỗi tối như xem khu vườn của chính mình.”</h2><p>Gia đình chị Hạnh dùng gói Family 3 tháng. Điều họ thích nhất không phải chỉ là rau sạch, mà là cảm giác con nhỏ cũng nhìn được cây lớn lên từng ngày.</p><p class="small subtle">— Nhật ký khách hàng tuần 12</p></div>
-      <div class="card"><span class="eyebrow">7 ngày đầu</span><div class="timeline">
-        <div class="timeline-item"><div class="time-pill">Ngày 1</div><div><p>Kích hoạt tài khoản, đặt tên vườn và xem camera đầu tiên.</p></div></div>
-        <div class="timeline-item"><div class="time-pill">Ngày 3</div><div><p>Nhận AI note đầu tiên về tốc độ nảy mầm và độ ẩm phù hợp.</p></div></div>
-        <div class="timeline-item"><div class="time-pill">Ngày 7</div><div><p>Xem timelapse ngắn, cảm nhận rõ cây đã khác ngày đầu.</p></div></div>
+    <div class="container story-band">
+      <div class="card story-quote"><div class="quote-mark">“</div><h2>Nhà mình mở portal mỗi tối như xem khu vườn của chính mình.</h2><p>Điểm chạm xúc cảm không nằm ở “dữ liệu”, mà ở việc con nhỏ cũng nhận ra rau hôm nay đã lớn hơn hôm qua.</p><p class="small subtle">— Chị Hạnh, gói Family, tuần thứ 12</p></div>
+      <div class="card"><span class="eyebrow">Bằng chứng niềm tin</span><h3>4 lớp để website thuyết phục hơn</h3><div class="cards-2"></div><div class="accordion">
+        <div class="accordion-item open" data-accordion-item><button class="accordion-button" data-accordion-button>Quy trình chuẩn hóa <span class="accordion-icon">＋</span></button><div class="accordion-content"><p>Nhà lưới, lịch vận hành, quy trình chăm sóc và checklist kỹ thuật được chuẩn hóa ngay từ đầu.</p></div></div>
+        <div class="accordion-item" data-accordion-item><button class="accordion-button" data-accordion-button>Dữ liệu cảm biến <span class="accordion-icon">＋</span></button><div class="accordion-content"><p>Khách không cần hiểu chuyên môn sâu nhưng vẫn biết vườn đang ở trạng thái tốt hay cần chú ý gì.</p></div></div>
+        <div class="accordion-item" data-accordion-item><button class="accordion-button" data-accordion-button>Nhật ký minh chứng <span class="accordion-icon">＋</span></button><div class="accordion-content"><p>Mỗi can thiệp quan trọng đều có thời gian, người thực hiện, ghi chú và ảnh đi kèm.</p></div></div>
+        <div class="accordion-item" data-accordion-item><button class="accordion-button" data-accordion-button>Truy xuất theo lô <span class="accordion-icon">＋</span></button><div class="accordion-content"><p>Mỗi đợt thu hoạch gắn với mã lô và hồ sơ chất lượng rõ ràng ngay trong portal.</p></div></div>
       </div></div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section alt">
     <div class="container grid-2">
-      <div>
-        <span class="eyebrow">FAQ rút gọn</span>
-        <h2>Những điều khách hàng thường hỏi trước khi bắt đầu</h2>
-      </div>
-      <div class="faq-grid">
-        <div class="faq-item"><h3>Tôi sẽ nhìn thấy gì trong portal?</h3><p>Webcam live, ảnh theo mốc, tình trạng môi trường, care log, lô thu hoạch và AI summary.</p></div>
-        <div class="faq-item"><h3>Nếu camera lỗi thì sao?</h3><p>Hệ thống báo trạng thái camera, có ticket hỗ trợ và lịch sử uptime để khách không bị “mất dấu” khu vườn.</p></div>
-        <div class="faq-item"><h3>Gia đình có cùng xem được không?</h3><p>Có. Portal có tính năng mời người thân cùng theo dõi theo quyền chia sẻ.</p></div>
+      <div><span class="eyebrow">FAQ rút gọn</span><h2>Những điều khách thường hỏi ngay trước khi để lại thông tin</h2></div>
+      <div class="accordion">
+        <div class="accordion-item open" data-accordion-item><button class="accordion-button" data-accordion-button>Tôi sẽ nhìn thấy gì trong portal?<span class="accordion-icon">＋</span></button><div class="accordion-content"><p>Webcam live, snapshot theo mốc, tình trạng môi trường, care log, lô thu hoạch, AI summary và lịch sử mùa vụ.</p></div></div>
+        <div class="accordion-item" data-accordion-item><button class="accordion-button" data-accordion-button>Nếu camera lỗi thì sao?<span class="accordion-icon">＋</span></button><div class="accordion-content"><p>Có trạng thái uptime, lịch sử downtime, ticket hỗ trợ và phương án snapshot backup để khách không bị “mất dấu” khu vườn.</p></div></div>
+        <div class="accordion-item" data-accordion-item><button class="accordion-button" data-accordion-button>Gia đình có cùng xem được không?<span class="accordion-icon">＋</span></button><div class="accordion-content"><p>Có. Portal hỗ trợ family sharing để ông bà hoặc con nhỏ cùng tham gia hành trình.</p></div></div>
       </div>
     </div>
   </section>
 
   <section class="section dark-band">
     <div class="container grid-2">
-      <div>
-        <span class="eyebrow" style="background:rgba(255,255,255,.12);color:white">Bắt đầu nhẹ</span>
-        <h2>Bắt đầu với khu vườn số đầu tiên của gia đình anh/chị</h2>
-        <p>Để lại vài thông tin cơ bản để nhận tư vấn gói phù hợp, demo portal và lộ trình kích hoạt vườn.</p>
-      </div>
+      <div><span class="eyebrow" style="background:rgba(255,255,255,.12);color:white">Bắt đầu nhẹ</span><h2>Bắt đầu với khu vườn số đầu tiên của gia đình anh/chị</h2><p>Chỉ cần vài thông tin cơ bản để nhận đề xuất gói phù hợp, demo portal và lộ trình kích hoạt.</p></div>
       <form class="portal-card" data-fake-submit>
         <div class="form-grid">
           <div><label>Họ và tên</label><input placeholder="Anh/chị nhập họ tên"></div>
           <div><label>Số điện thoại</label><input placeholder="09xx xxx xxx"></div>
-          <div><label>Nhu cầu</label><select><option>Gia đình 1-2 người</option><option>Gia đình 3-4 người</option><option>Ưu tiên trải nghiệm số mạnh</option></select></div>
+          <div><label>Quy mô gia đình</label><select><option>1–2 người</option><option>3–4 người</option><option>5+ người</option></select></div>
           <div><label>Mốc bắt đầu mong muốn</label><input placeholder="Trong 2 tuần tới"></div>
         </div>
-        <div style="margin-top:16px"><button class="btn btn-primary">Bắt đầu với vườn của tôi</button></div>
+        <div style="margin-top:16px"><label>Mối quan tâm chính</label><textarea placeholder="Ví dụ: muốn rau sạch cho con nhỏ, thích xem webcam và care log rõ ràng"></textarea></div>
+        <div style="margin-top:16px" class="inline-list"><button class="btn btn-primary">Bắt đầu với vườn của tôi</button><a class="btn btn-secondary" href="portal/dashboard.html">Xem portal trước</a></div>
       </form>
     </div>
   </section>
 </main>
-<footer class="footer">
-  <div class="container footer-grid">
-    <div>
-      <div class="logo" style="margin-bottom:12px"><span class="logo-badge">🌿</span><span>Vườn Trong Tầm Tay</span></div>
-      <p>Dự án prototype cho mô hình vườn thuê số hóa: cảm giác sở hữu thật, webcam 24/7, dữ liệu minh bạch và an toàn thực phẩm nhìn thấy được.</p>
-    </div>
-    <div><h3>Khám phá</h3><p><a href="how-it-works.html">Cách hoạt động</a><br><a href="packages.html">Gói vườn</a><br><a href="digital-experience.html">Trải nghiệm số</a></p></div>
-    <div><h3>Niềm tin</h3><p><a href="food-safety.html">An toàn thực phẩm</a><br><a href="your-garden-story.html">Câu chuyện vườn</a><br><a href="faq.html">FAQ</a></p></div>
-    <div><h3>Bắt đầu</h3><p><a href="signup/register.html">Đăng ký</a><br><a href="signup/onboarding.html">Onboarding</a><br><a href="auth/login.html">Đăng nhập</a></p></div>
-  </div>
-</footer>
+<footer class="footer"><div class="container footer-grid"><div><div class="logo" style="margin-bottom:12px"><span class="logo-badge">🌿</span><span>Vườn Trong Tầm Tay</span></div><p>Dự án prototype cho mô hình vườn thuê số hóa: cảm giác sở hữu thật, webcam 24/7, dữ liệu minh bạch và an toàn thực phẩm nhìn thấy được.</p></div><div><h3>Khám phá</h3><p><a href="how-it-works.html">Cách hoạt động</a><br><a href="packages.html">Gói vườn</a><br><a href="digital-experience.html">Trải nghiệm số</a></p></div><div><h3>Niềm tin</h3><p><a href="food-safety.html">An toàn thực phẩm</a><br><a href="your-garden-story.html">Câu chuyện vườn</a><br><a href="faq.html">FAQ</a></p></div><div><h3>Bắt đầu</h3><p><a href="signup/register.html">Đăng ký</a><br><a href="signup/onboarding.html">Onboarding</a><br><a href="auth/login.html">Đăng nhập</a></p></div></div></footer>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
