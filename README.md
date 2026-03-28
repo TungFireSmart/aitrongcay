@@ -27,7 +27,6 @@ Hoặc:
 - `index.html`
 - `how-it-works.html`
 - `packages.html`
-- `digital-experience.html`
 - `food-safety.html`
 - `your-garden-story.html`
 - `faq.html`
@@ -40,6 +39,7 @@ Hoặc:
 - `portal/care-log.html`
 - `portal/quality-safety.html`
 - `portal/ai-gardener.html`
+- `portal/tools-warehouse.html`
 
 ## Thông tin liên hệ
 
