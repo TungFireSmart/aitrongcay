@@ -86,6 +86,7 @@ p { margin: 0 0 16px; color: rgba(36,49,39,.82); line-height: 1.72; }
 .nav-menu { display: flex; align-items: center; gap: 18px; font-size: 15px; }
 .nav-menu a, .small-link { color: rgba(36,49,39,.78); }
 .nav-menu a:hover, .small-link:hover { color: var(--forest); }
+.nav-menu a.active { color: var(--forest); font-weight: 700; }
 .nav-actions { display: flex; align-items: center; gap: 12px; }
 .menu-toggle { display:none; }
 .mobile-panel-inner { padding: 0 0 18px; display:grid; gap:10px; }
@@ -265,6 +266,51 @@ label { font-weight: 700; display:block; margin-bottom: 8px; }
 .highlight-box {
   padding: 22px; border-radius: 24px; background: linear-gradient(135deg, rgba(123,196,127,.14), rgba(255,255,255,.9)); border: 1px solid var(--line);
 }
+.info-band {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+.info-tile {
+  padding: 18px 20px;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.86);
+  box-shadow: var(--shadow-soft);
+}
+.info-tile strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--forest-deep);
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+.footer-top {
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+.footer-card {
+  padding: 22px 24px;
+  border-radius: 24px;
+  background: rgba(255,255,255,.82);
+  border: 1px solid var(--line);
+}
+.footer-card p:last-child { margin-bottom: 0; }
+.footer-meta {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  display:flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: rgba(36,49,39,.64);
+  font-size: 14px;
+}
 .timeline-compact { display:grid; gap:12px; }
 .timeline-compact .timeline-item { padding: 18px 20px; }
 .portal-status-line { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 14px; border-radius:16px; background: rgba(234,245,234,.65); margin-bottom: 12px; }
@@ -293,7 +339,7 @@ label { font-weight: 700; display:block; margin-bottom: 8px; }
 }
 .page-map a span { color: rgba(36,49,39,.68); }
 @media (max-width: 1024px) {
-  .hero-grid, .grid-2, .portal-layout, .footer-grid, .portal-grid, .story-grid, .comparison-grid, .story-band, .split-card, .table-row, .feature-grid { grid-template-columns: 1fr; }
+  .hero-grid, .grid-2, .portal-layout, .footer-grid, .portal-grid, .story-grid, .comparison-grid, .story-band, .split-card, .table-row, .feature-grid, .footer-top, .info-band { grid-template-columns: 1fr; }
   .cards-4, .badge-grid, .portal-kpis, .khám phá-ribbon-inner { grid-template-columns: repeat(2,1fr); }
   .khám phá-ribbon-inner { display: grid; }
   .cards-3, .pricing-grid, .value-strip, .stats-grid, .form-grid, .faq-grid, .steps-grid, .kpi-row { grid-template-columns: 1fr; }

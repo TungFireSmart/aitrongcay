@@ -11,6 +11,7 @@ if (mobileToggle && mobilePanel) {
         <a href="${prefix}packages.html">Gói vườn</a>
         <a href="${prefix}digital-experience.html">Trải nghiệm số</a>
         <a href="${prefix}food-safety.html">An toàn thực phẩm</a>
+        <a href="${prefix}your-garden-story.html">Câu chuyện vườn</a>
         <a href="${prefix}faq.html">FAQ</a>
       </div>`;
     mobilePanel.dataset.initialized = 'true';
@@ -20,6 +21,16 @@ if (mobileToggle && mobilePanel) {
     mobilePanel.style.display = opened ? 'none' : 'block';
   });
 }
+
+const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-menu a').forEach(link => {
+  const href = link.getAttribute('href') || '';
+  if (href.endsWith(currentPath)) link.classList.add('active');
+});
+
+document.querySelectorAll('[data-current-year]').forEach(el => {
+  el.textContent = new Date().getFullYear();
+});
 
 document.querySelectorAll('[data-fake-submit]').forEach(form => {
   form.addEventListener('submit', (e) => {
