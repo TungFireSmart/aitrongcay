@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Trang chủ",
+    "slug": "home",
+    "purpose": "Static front page using front-page.php"
+  },
+  {
+    "title": "Cách hoạt động",
+    "slug": "cach-hoat-dong",
+    "purpose": "Explain customer journey and how the digital garden lease works"
+  },
+  {
+    "title": "Chợ quê",
+    "slug": "cho-que",
+    "purpose": "Packages / seasonal offers / productized plans"
+  },
+  {
+    "title": "An toàn thực phẩm",
+    "slug": "an-toan-thuc-pham",
+    "purpose": "Trust and quality page"
+  },
+  {
+    "title": "Chuyện nhà nông",
+    "slug": "chuyen-nha-nong",
+    "purpose": "Storytelling, field updates, community"
+  },
+  {
+    "title": "FAQ",
+    "slug": "faq",
+    "purpose": "Top buying questions"
+  },
+  {
+    "title": "Đăng ký tư vấn",
+    "slug": "dang-ky-tu-van",
+    "purpose": "Lead capture / consultation form"
+  },
+  {
+    "title": "Onboarding",
+    "slug": "onboarding",
+    "purpose": "Activation and welcome checklist"
+  },
+  {
+    "title": "Đăng nhập",
+    "slug": "dang-nhap",
+    "purpose": "Portal login / auth handoff"
+  },
+  {
+    "title": "Portal",
+    "slug": "portal",
+    "purpose": "Portal landing page with custom template"
+  }
+]

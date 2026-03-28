@@ -41,6 +41,26 @@ Hoặc:
 - `portal/ai-gardener.html`
 - `portal/tools-warehouse.html`
 
+## WordPress foundation (checkpoint 1)
+
+Repo đã có sẵn theme WordPress nền tại:
+
+- `wp-content/themes/aitrongcay/`
+
+Các điểm đã chuẩn bị:
+
+- theme WordPress tối thiểu: `style.css`, `functions.php`, `header.php`, `footer.php`, `front-page.php`, `page.php`, `index.php`
+- asset đã được copy vào theme để chạy độc lập với repo tĩnh
+- homepage đã có các section WordPress-ready theo đúng brand hiện tại
+- map slug cho các trang public + portal
+- tài liệu local-first để bật WordPress lần đầu
+
+Tài liệu quan trọng:
+
+- `wp-content/themes/aitrongcay/docs/page-map.md`
+- `wp-content/themes/aitrongcay/docs/local-wordpress-quickstart.md`
+- `wp-content/themes/aitrongcay/docs/seed-pages.json`
+
 ## Thông tin liên hệ
 
 **CÔNG TY CỔ PHẦN NGHIÊN CỨU GIẢI PHÁP VÀ PHÁT TRIỂN CÔNG NGHỆ XANH**
