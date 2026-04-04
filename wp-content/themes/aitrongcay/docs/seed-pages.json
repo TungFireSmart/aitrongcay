@@ -2,51 +2,68 @@
   {
     "title": "Trang chủ",
     "slug": "home",
-    "purpose": "Static front page using front-page.php"
+    "purpose": "Static front page using front-page.php",
+    "status": "theme-template"
   },
   {
     "title": "Cách hoạt động",
     "slug": "cach-hoat-dong",
-    "purpose": "Explain customer journey and how the digital garden lease works"
+    "purpose": "Explain customer journey and how the digital garden lease works",
+    "status": "starter-content-ready",
+    "contentFile": "docs/starter-content/cach-hoat-dong.html"
   },
   {
     "title": "Chợ quê",
     "slug": "cho-que",
-    "purpose": "Packages / seasonal offers / productized plans"
+    "purpose": "Marketplace / exchange page for community buying-selling-posting",
+    "status": "starter-content-ready",
+    "contentFile": "docs/starter-content/cho-que.html"
   },
   {
     "title": "An toàn thực phẩm",
     "slug": "an-toan-thuc-pham",
-    "purpose": "Trust and quality page"
+    "purpose": "Trust and quality page",
+    "status": "starter-content-ready",
+    "contentFile": "docs/starter-content/an-toan-thuc-pham.html"
   },
   {
     "title": "Chuyện nhà nông",
     "slug": "chuyen-nha-nong",
-    "purpose": "Storytelling, field updates, community"
+    "purpose": "Storytelling, field updates, community",
+    "status": "starter-content-ready",
+    "contentFile": "docs/starter-content/chuyen-nha-nong.html"
   },
   {
     "title": "FAQ",
     "slug": "faq",
-    "purpose": "Top buying questions"
+    "purpose": "Top buying questions",
+    "status": "starter-content-ready",
+    "contentFile": "docs/starter-content/faq.html"
   },
   {
     "title": "Đăng ký tư vấn",
     "slug": "dang-ky-tu-van",
-    "purpose": "Lead capture / consultation form"
+    "purpose": "Lead capture / consultation form",
+    "status": "starter-content-ready",
+    "contentFile": "docs/starter-content/dang-ky-tu-van.html",
+    "funnelRole": "primary-conversion"
   },
   {
     "title": "Onboarding",
     "slug": "onboarding",
-    "purpose": "Activation and welcome checklist"
+    "purpose": "Activation and welcome checklist",
+    "status": "virtual-template"
   },
   {
     "title": "Đăng nhập",
     "slug": "dang-nhap",
-    "purpose": "Portal login / auth handoff"
+    "purpose": "Portal login / auth handoff",
+    "status": "virtual-template"
   },
   {
     "title": "Portal",
     "slug": "portal",
-    "purpose": "Portal landing page with custom template"
+    "purpose": "Portal landing page with custom template",
+    "status": "theme-template"
   }
 ]

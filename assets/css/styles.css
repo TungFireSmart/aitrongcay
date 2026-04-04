@@ -823,6 +823,129 @@ label { font-weight: 700; display:block; margin-bottom: 8px; }
   gap: 12px;
   flex-wrap: wrap;
 }
+.portal-switcher-shell {
+  display: grid;
+  gap: 12px;
+  background: rgba(255,255,255,.1);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.12);
+}
+.portal-switcher-head {
+  display: grid;
+  gap: 4px;
+}
+.portal-switcher-head strong { font-size: 15px; }
+.portal-switcher-head span { color: rgba(255,255,255,.68); font-size: 13px; }
+.switcher-label {
+  display: block;
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255,255,255,.78);
+}
+.portal-switcher-shell select {
+  background: rgba(255,255,255,.92);
+  border-color: rgba(255,255,255,.12);
+}
+.portal-switcher-card,
+.share-hero-card {
+  padding: 22px 24px;
+  border-radius: 26px;
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(234,245,234,.82));
+  display: grid;
+  gap: 16px;
+}
+.portal-switcher-inline-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.social-layout { align-items: start; }
+.social-stack {
+  display: grid;
+  gap: 14px;
+}
+.social-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(247,244,236,.88));
+}
+.social-item-main {
+  display: grid;
+  gap: 8px;
+}
+.social-item-main strong {
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: var(--forest-deep);
+}
+.social-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.social-actions.is-disabled {
+  opacity: .72;
+}
+.social-meta-row,
+.member-row-head {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.member-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  border: 1px solid transparent;
+}
+.member-badge.is-forest {
+  background: rgba(31,107,69,.12);
+  color: var(--forest-deep);
+  border-color: rgba(31,107,69,.14);
+}
+.member-badge.is-gold {
+  background: rgba(200,169,107,.18);
+  color: #7a5a21;
+  border-color: rgba(200,169,107,.28);
+}
+.member-badge.is-sky {
+  background: rgba(58,112,155,.12);
+  color: #2e638a;
+  border-color: rgba(58,112,155,.16);
+}
+.member-badge.is-sand {
+  background: rgba(171,125,64,.12);
+  color: #7f5f30;
+  border-color: rgba(171,125,64,.16);
+}
+.highlight-item {
+  background: linear-gradient(135deg, rgba(123,196,127,.18), rgba(255,255,255,.95));
+}
+.compact-item {
+  align-items: center;
+}
+.stacked-actions {
+  align-self: center;
+}
+.empty-state {
+  padding: 18px 20px;
+  border-radius: 20px;
+  border: 1px dashed rgba(31,107,69,.18);
+  background: rgba(234,245,234,.58);
+  color: rgba(36,49,39,.72);
+}
 @media (max-width: 1024px) {
   .auth-shell,
   .portal-entry-card { grid-template-columns: 1fr; }
@@ -837,9 +960,13 @@ label { font-weight: 700; display:block; margin-bottom: 8px; }
   .auth-card-wide { padding: 22px; }
   .auth-card-head,
   .auth-inline-meta,
-  .portal-entry-card { display: grid; }
+  .portal-entry-card,
+  .social-item,
+  .social-actions,
+  .portal-switcher-inline-meta { display: grid; }
   .auth-actions,
   .portal-entry-actions { flex-direction: column; }
   .auth-actions .btn,
-  .portal-entry-actions .btn { width: 100%; }
+  .portal-entry-actions .btn,
+  .social-actions .btn { width: 100%; }
 }

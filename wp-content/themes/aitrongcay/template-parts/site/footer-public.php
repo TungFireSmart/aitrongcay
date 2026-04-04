@@ -37,6 +37,11 @@ $footer_groups = aitrongcay_footer_groups();
 
     <div class="container footer-meta">
         <span>© <?php echo esc_html((string) gmdate('Y')); ?> <?php echo esc_html($company['brand']); ?></span>
-        <span>Theme WordPress foundation đã sẵn sàng để thay dần các trang HTML tĩnh bằng template và page content thật.</span>
+        <span>Một khu vườn số cho gia đình, đủ rõ để theo dõi và đủ yên để gắn bó mỗi ngày.</span>
     </div>
 </footer>
+
+<a class="floating-ai-chat" href="<?php echo esc_url(home_url('/portal/tro-ly-ai/')); ?>" aria-label="Chat với AI">
+    <span class="floating-ai-chat-icon" aria-hidden="true">💬</span>
+    <span>Chat với AI</span>
+</a>
